@@ -1,0 +1,8 @@
+B:\dvmgsmr-console\dvmgsmr-console\dvmgsmr-console\obj\Debug\net8.0-windows10.0.18362.0\dvmgsmr-console.csproj.AssemblyReference.cache
+B:\dvmgsmr-console\dvmgsmr-console\dvmgsmr-console\obj\Debug\net8.0-windows10.0.18362.0\dvmgsmr_console.MainForm.resources
+B:\dvmgsmr-console\dvmgsmr-console\dvmgsmr-console\obj\Debug\net8.0-windows10.0.18362.0\dvmgsmr-console.csproj.GenerateResource.cache
+B:\dvmgsmr-console\dvmgsmr-console\dvmgsmr-console\obj\Debug\net8.0-windows10.0.18362.0\dvmgsmr-console.GeneratedMSBuildEditorConfig.editorconfig
+B:\dvmgsmr-console\dvmgsmr-console\dvmgsmr-console\obj\Debug\net8.0-windows10.0.18362.0\dvmgsmr-console.AssemblyInfoInputs.cache
+B:\dvmgsmr-console\dvmgsmr-console\dvmgsmr-console\obj\Debug\net8.0-windows10.0.18362.0\dvmgsmr-console.AssemblyInfo.cs
+B:\dvmgsmr-console\dvmgsmr-console\dvmgsmr-console\obj\Debug\net8.0-windows10.0.18362.0\dvmgsmr-console.csproj.CoreCompileInputs.cache
+B:\dvmgsmr-console\dvmgsmr-console\dvmgsmr-console\obj\Debug\net8.0-windows10.0.18362.0\dvmgsmr-console.sourcelink.json

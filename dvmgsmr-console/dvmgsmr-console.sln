@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dvmgsmr-console", "dvmgsmr-console\dvmgsmr-console.csproj", "{FCE21B7E-3009-41BB-A732-D34833A97C89}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RC2Client", "..\RC2-Client\RC2Client\RC2Client.csproj", "{44D97C7D-5DCD-42AA-A878-9D1B9EF00855}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FCE21B7E-3009-41BB-A732-D34833A97C89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCE21B7E-3009-41BB-A732-D34833A97C89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCE21B7E-3009-41BB-A732-D34833A97C89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCE21B7E-3009-41BB-A732-D34833A97C89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44D97C7D-5DCD-42AA-A878-9D1B9EF00855}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44D97C7D-5DCD-42AA-A878-9D1B9EF00855}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44D97C7D-5DCD-42AA-A878-9D1B9EF00855}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44D97C7D-5DCD-42AA-A878-9D1B9EF00855}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7FD69652-DDF1-4272-94CB-31AF73BDDF27}
+	EndGlobalSection
+EndGlobal
