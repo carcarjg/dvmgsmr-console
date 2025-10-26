@@ -117,4 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="daymonthyearLAB.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ACBtimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="acbFLASHbut.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="mxtmr.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>158, 17</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="ACBicoPB.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACUAAAAfCAMAAABXofT6AAAABGdBTUEAALGPC/xhBQAAAEhQTFRF+Pj4
+        AQEB9vb2////9PT0+vr68vLy8/PzpqamDw8Pvr6+ampqPj4+Kioqe3t7xMTEn5+fh4eHHR0dWVlZrq6u
+        kZGR5+fn2dnZ2yWIvwAAAZpJREFUOE+FVIu2gyAMA1pBXj7n9v9/etOibm67Z1EP0ca0FtB0wTG7YGRg
+        b9g4Z7gL7J1jEwzL4HEokftA5DhA7HxHFBiPcclgDoKL0lqXKFjqmggJ5LHDS5JJiIiytTYWQQTLnciu
+        Xs7TAI3dSLCB2YE0gFOrVkIPvG9tzWvOuSq/GwQuXkw3jbyiJ98stGotkCZr15RGRRoTipz0OyUqpjg5
+        UG+L1nSgfPXq7Uw+cGjwNEN18QLZVfud3IvquP+lUrxn9MEDAQfa95YR/Fv105fq0YnSH7hNq/Tr9Nq7
+        Kl7vePHaZ0i93tDrRIroOUPiVUqLN3J6nbOtXpV4UdHSdZjwf7zwkW01VCWnF1a0EuMpIZrxZYpVyPjh
+        5YLkuKC6z93BNO5RBdZqIoldvAw69milNywPiJrXWReUTFu0w621frBxIs1z8eJOtlAcDsA2G00pNe/9
+        YroXW+cZO6NhmKstd2nF04u7Mdq4pVdssE4UmhdEDvtsjXVp+/rAstS4omPqpQlhJ6sPPwk52oD1iF9K
+        i0p5v+DcH5PnFSP0HyDzAAAAAElFTkSuQmCC
+</value>
+  </data>
 </root>

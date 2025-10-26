@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "6xaQCEU57w4=",
+  "dgSpecHash": "iaY39Jr+pC8=",
   "success": true,
   "projectFilePath": "B:\\dvmgsmr-console\\dvmgsmr-console\\dvmgsmr-console\\dvmgsmr-console.csproj",
   "expectedPackageFiles": [
@@ -88,7 +88,7 @@
     "C:\\Users\\admin\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\system.threading.threadpool\\4.3.0\\system.threading.threadpool.4.3.0.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\system.threading.timer\\4.3.0\\system.threading.timer.4.3.0.nupkg.sha512",
-    "C:\\Users\\admin\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.18362.44\\microsoft.windows.sdk.net.ref.10.0.18362.44.nupkg.sha512"
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.18362.57\\microsoft.windows.sdk.net.ref.10.0.18362.57.nupkg.sha512"
   ],
   "logs": []
 }

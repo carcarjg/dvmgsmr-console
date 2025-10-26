@@ -28,12 +28,59 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.components = new System.ComponentModel.Container();
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(800, 450);
-			this.Text = "Form1";
+			logginbutton = new Button();
+			Administratorbut = new Button();
+			panel1 = new Panel();
+			panel1.SuspendLayout();
+			SuspendLayout();
+			// 
+			// logginbutton
+			// 
+			logginbutton.Font = new Font("Segoe UI", 14F);
+			logginbutton.Location = new Point(466, 364);
+			logginbutton.Name = "logginbutton";
+			logginbutton.Size = new Size(304, 111);
+			logginbutton.TabIndex = 0;
+			logginbutton.Text = "Login..";
+			logginbutton.UseVisualStyleBackColor = true;
+			// 
+			// Administratorbut
+			// 
+			Administratorbut.Font = new Font("Segoe UI", 14F);
+			Administratorbut.ForeColor = SystemColors.ControlDarkDark;
+			Administratorbut.Location = new Point(465, 831);
+			Administratorbut.Name = "Administratorbut";
+			Administratorbut.Size = new Size(304, 111);
+			Administratorbut.TabIndex = 1;
+			Administratorbut.Text = "Administrator";
+			Administratorbut.UseVisualStyleBackColor = true;
+			// 
+			// panel1
+			// 
+			panel1.BackgroundImage = Properties.Resources.Captuasdadadre;
+			panel1.Controls.Add(logginbutton);
+			panel1.Location = new Point(-1, 1);
+			panel1.Name = "panel1";
+			panel1.Size = new Size(1234, 983);
+			panel1.TabIndex = 2;
+			// 
+			// MainForm
+			// 
+			AutoScaleDimensions = new SizeF(10F, 25F);
+			AutoScaleMode = AutoScaleMode.Font;
+			ClientSize = new Size(1233, 986);
+			Controls.Add(Administratorbut);
+			Controls.Add(panel1);
+			Name = "MainForm";
+			Text = "MainForm";
+			panel1.ResumeLayout(false);
+			ResumeLayout(false);
 		}
 
 		#endregion
+
+		private Button logginbutton;
+		private Button Administratorbut;
+		private Panel panel1;
 	}
 }
