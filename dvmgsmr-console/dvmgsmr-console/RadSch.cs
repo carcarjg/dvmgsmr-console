@@ -32,6 +32,8 @@ namespace dvmgsmr_console
 
 		internal static string[] acallsTG = new string[4];
 
+		private static readonly CancellationTokenSource cts = new CancellationTokenSource();
+
 		public RadSch()
 		{
 			InitializeComponent();
@@ -43,9 +45,13 @@ namespace dvmgsmr_console
 			string DTMM = M.ToString("MMMM");
 			string DTMY = DateTime.Now.Year.ToString();
 			daymonthyearLAB.Text = DTMD + " " + DTMM + " " + DTMY;
+			if (Properties.Settings.Default.ConnMODE == "RC2")
+			{
+				RC2Con();
+			}
 #if DEBUG
 
-			ringACB(500150, "CM_RAIL");
+			//ringACB(500150, "CM_RAIL");
 #endif
 		}
 
@@ -57,6 +63,8 @@ namespace dvmgsmr_console
 			ACBhcLAB.Visible = true;
 			ACBtgLAB.Visible = true;
 			ACBicoPB.Visible = true;
+			ACBtimer.Enabled = true;
+			ACBtimer.Start();
 
 			int availslt = AddNewCall(HC, TG);
 			if (availslt != 99)
@@ -226,6 +234,24 @@ namespace dvmgsmr_console
 			}
 		}
 
+		internal static void ButtonBeep()
+		{
+			string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
+			string wavFileName = "Sounds\\screen_beep.wav";
+			string wavFilePath = Path.Combine(currentDirectory, wavFileName);
+			if (File.Exists(wavFilePath))
+			{
+				try
+				{
+					using (SoundPlayer player = new SoundPlayer(wavFilePath))
+					{
+						player.Play();
+					}
+				}
+				catch (Exception ex) { }
+			}
+		}
+
 		private void ACBtimer_Tick(object sender, EventArgs e)
 		{
 			acbFLASHbut.Visible = true;
@@ -390,6 +416,46 @@ namespace dvmgsmr_console
 			daymonthyearLAB.Text = DTMD + " " + DTMM + " " + DTMY;
 
 			//Check for New calls, if new calls exist, add them to the calls display
+		}
+
+		internal void RC2Con()
+		{
+			int RXA = 0;
+			int TXA = 0;
+			int WSP = 0;
+			string WSA = Properties.Settings.Default.RC2WSAddr;
+
+			try { WSP = int.Parse(Properties.Settings.Default.RC2WSPort); }
+			catch (Exception)
+			{
+				MessageBox.Show("Please enter a Daemon address and port, k thx bye");
+			}
+
+			if (WSA != null && WSP != 0)
+			{
+				Connections.RC2(cts.Token, WSA, WSP, TXA, RXA);
+			}
+			else
+			{
+				MessageBox.Show("Please enter a Daemon address");
+			}
+		}
+
+		private static void teardown()
+		{
+			//Stop Websocket and WebRTC Connections
+			try
+			{
+				cts.Cancel();
+			}
+			catch (Exception) { }
+
+			Application.Exit();
+		}
+
+		private void RadSch_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			teardown();
 		}
 	}
 }

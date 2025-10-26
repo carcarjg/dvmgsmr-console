@@ -80,7 +80,6 @@
 			// 
 			// ACBtimer
 			// 
-			ACBtimer.Enabled = true;
 			ACBtimer.Interval = 1000;
 			ACBtimer.Tick += ACBtimer_Tick;
 			// 
@@ -500,7 +499,9 @@
 			Controls.Add(acbBUT);
 			Controls.Add(daymonthyearLAB);
 			Name = "RadSch";
+			StartPosition = FormStartPosition.CenterScreen;
 			Text = "RadSch";
+			FormClosing += RadSch_FormClosing;
 			((System.ComponentModel.ISupportInitialize)ACBicoPB).EndInit();
 			ResumeLayout(false);
 			PerformLayout();

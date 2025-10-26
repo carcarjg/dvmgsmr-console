@@ -43,3 +43,12 @@ B:\dvmgsmr-console\dvmgsmr-console\dvmgsmr-console\bin\Debug\net8.0-windows10.0.
 B:\dvmgsmr-console\dvmgsmr-console\dvmgsmr-console\obj\Debug\net8.0-windows10.0.18362.0\dvmgsmr_console.Properties.Resources.resources
 B:\dvmgsmr-console\dvmgsmr-console\dvmgsmr-console\obj\Debug\net8.0-windows10.0.18362.0\dvmgsmr_console.RadSch.resources
 B:\dvmgsmr-console\dvmgsmr-console\dvmgsmr-console\bin\Debug\net8.0-windows10.0.18362.0\Sounds\GSM-R_Ring.wav
+B:\dvmgsmr-console\dvmgsmr-console\dvmgsmr-console\obj\Debug\net8.0-windows10.0.18362.0\dvmgsmr_console.AdminPage.resources
+B:\dvmgsmr-console\dvmgsmr-console\dvmgsmr-console\obj\Debug\net8.0-windows10.0.18362.0\dvmgsmr_console.LoginPage.resources
+B:\dvmgsmr-console\dvmgsmr-console\dvmgsmr-console\bin\Debug\net8.0-windows10.0.18362.0\Sounds\call-dsd.wav
+B:\dvmgsmr-console\dvmgsmr-console\dvmgsmr-console\bin\Debug\net8.0-windows10.0.18362.0\Sounds\call-emergency.wav
+B:\dvmgsmr-console\dvmgsmr-console\dvmgsmr-console\bin\Debug\net8.0-windows10.0.18362.0\Sounds\call-urgent.wav
+B:\dvmgsmr-console\dvmgsmr-console\dvmgsmr-console\bin\Debug\net8.0-windows10.0.18362.0\Sounds\connecting.wav
+B:\dvmgsmr-console\dvmgsmr-console\dvmgsmr-console\bin\Debug\net8.0-windows10.0.18362.0\Sounds\message_standard.wav
+B:\dvmgsmr-console\dvmgsmr-console\dvmgsmr-console\bin\Debug\net8.0-windows10.0.18362.0\Sounds\screen_beep.wav
+B:\dvmgsmr-console\dvmgsmr-console\dvmgsmr-console\bin\Debug\net8.0-windows10.0.18362.0\dvmgsmr-console.dll.config

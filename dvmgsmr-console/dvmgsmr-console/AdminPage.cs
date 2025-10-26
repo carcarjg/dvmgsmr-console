@@ -1,4 +1,4 @@
-// %%%%%%    @%%%%%@
+﻿// %%%%%%    @%%%%%@
 //%%%%%%%%   %%%%%%%@
 //@%%%%%%%@  %%%%%%%%%        @@      @@  @@@      @@@ @@@     @@@ @@@@@@@@@@   @@@@@@@@@
 //%%%%%%%%@ @%%%%%%%%       @@@@@   @@@@ @@@@@   @@@@ @@@@   @@@@ @@@@@@@@@@@@@@@@@@@@@@@ @@@@
@@ -15,24 +15,55 @@
 //
 // (C) Nyx Gallini 2025
 //
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
 using System.Media;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace dvmgsmr_console
 {
-	public partial class MainForm : Form
+	public partial class AdminPage : Form
 	{
-		public MainForm()
+		public AdminPage()
 		{
 			InitializeComponent();
+			switch (Properties.Settings.Default.ConnMODE)
+			{
+				case "RC2":
+					rc2BUT.BackColor = Color.Blue;
+					break;
+
+				case "GSMR":
+					break;
+
+				case "SIP":
+					break;
+			}
 		}
 
-		internal static bool CLOSE;
-
-		private void Administratorbut_Click(object sender, EventArgs e)
+		private void rc2BUT_Click(object sender, EventArgs e)
 		{
+			Properties.Settings.Default.ConnMODE = "RC2";
+			rc2BUT.BackColor = Color.Blue;
 			ButtonBeep();
-			AdminPage AP = new AdminPage();
-			AP.ShowDialog();
+		}
+
+		private void gsmrbut_Click(object sender, EventArgs e)
+		{
+			MessageBox.Show("GSMR Not Available as a Connection Type");
+			ButtonBeep();
+		}
+
+		private void sipBUT_Click(object sender, EventArgs e)
+		{
+			MessageBox.Show("SIP Not Available as a Connection Type");
+			ButtonBeep();
 		}
 
 		internal static void ButtonBeep()
@@ -49,35 +80,9 @@ namespace dvmgsmr_console
 						player.Play();
 					}
 				}
-				catch (Exception) { }
+				catch (Exception ex) { }
 			}
 			else { }
-		}
-
-		private void MaintTMR_Tick(object sender, EventArgs e)
-		{
-			string DTMD = DateTime.Now.Day.ToString();
-			DateTime M = DateTime.Now;
-			string DTMM = M.ToString("MMM");
-			string DTMY = DateTime.Now.Year.ToString();
-			daymonthyearLAB.Text = DTMD + " " + DTMM + " " + DTMY;
-			if (CLOSE == true)
-			{
-				this.Hide();
-				var RadSch = new RadSch();
-				RadSch.Closed += (s, args) => this.Close();
-				RadSch.Show();
-				CLOSE = false;
-			}
-		}
-
-		private void logginbutton_Click(object sender, EventArgs e)
-		{
-			ButtonBeep();
-			loginPage1.Visible = true;
-			loginPage1.BringToFront();
-			logginbutton.Visible = false;
-			Administratorbut.Visible = false;
 		}
 	}
 }

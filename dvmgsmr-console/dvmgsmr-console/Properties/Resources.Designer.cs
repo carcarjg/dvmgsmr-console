@@ -83,9 +83,19 @@ namespace dvmgsmr_console.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Captuasdadadre {
+        internal static System.Drawing.Bitmap Cadasdadasdaapture {
             get {
-                object obj = ResourceManager.GetObject("Captuasdadadre", resourceCulture);
+                object obj = ResourceManager.GetObject("Cadasdadasdaapture", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Captuasdadadre1 {
+            get {
+                object obj = ResourceManager.GetObject("Captuasdadadre1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
