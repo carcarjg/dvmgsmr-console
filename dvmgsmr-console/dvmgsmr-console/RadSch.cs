@@ -15,6 +15,8 @@
 //
 // (C) Nyx Gallini 2025
 //
+using dvmgsmr_console.Properties;
+using Microsoft.VisualBasic;
 using System.Media;
 using System.Xml.Linq;
 using Windows.Perception.People;
@@ -31,6 +33,8 @@ namespace dvmgsmr_console
 
 		internal static string[] acallsHC = new string[4];
 
+		internal static string calltype;
+
 		internal static string[] acallsTG = new string[4];
 
 		private static readonly CancellationTokenSource cts = new CancellationTokenSource();
@@ -46,6 +50,7 @@ namespace dvmgsmr_console
 			string DTMM = M.ToString("MMMM");
 			string DTMY = DateTime.Now.Year.ToString();
 			daymonthyearLAB.Text = DTMD + " " + DTMM + " " + DTMY;
+			RoleLab.Text = UserInforStore.SigBox;
 			if (Properties.Settings.Default.ConnMODE == "RC2")
 			{
 				RC2Con();
@@ -65,6 +70,19 @@ namespace dvmgsmr_console
 			ACBtgLAB.Visible = true;
 			ACBicoPB.Visible = true;
 			ACBtimer.Enabled = true;
+			if (calltype == "Train")
+			{
+				ACBicoPB.Image = Resources._9_96528_best_free_train_png_icon_train_icon__1_;
+			}
+			else if (calltype == "UnregTrain")
+			{
+			}
+			else if (calltype == "SigBox")
+			{
+			}
+			else if (calltype == "Phone")
+			{
+			}
 			ACBtimer.Start();
 		}
 
@@ -428,6 +446,7 @@ namespace dvmgsmr_console
 					if (callcreateinprog != true)
 					{
 						callcreateinprog = true;
+						calltype = "TRAIN";
 						AddNewCall(int.Parse(Connections.CID), Connections.CCH);
 					}
 				}
@@ -581,5 +600,8 @@ namespace dvmgsmr_console
 		{
 			teardown();
 		}
+
+		private void TabBut_Click(object sender, EventArgs e)
+		{ }
 	}
 }

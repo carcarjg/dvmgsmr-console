@@ -63,19 +63,9 @@ namespace dvmgsmr_console.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _9_96528_best_free_train_png_icon_train_icon {
+        internal static System.Drawing.Bitmap _9_96528_best_free_train_png_icon_train_icon__1_ {
             get {
-                object obj = ResourceManager.GetObject("9-96528_best-free-train-png-icon-train-icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap adsadaadadsdasdasCapture1 {
-            get {
-                object obj = ResourceManager.GetObject("adsadaadadsdasdasCapture1", resourceCulture);
+                object obj = ResourceManager.GetObject("9-96528_best-free-train-png-icon-train-icon (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -96,6 +86,36 @@ namespace dvmgsmr_console.Properties {
         internal static System.Drawing.Bitmap Captuasdadadre1 {
             get {
                 object obj = ResourceManager.GetObject("Captuasdadadre1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CheckBox {
+            get {
+                object obj = ResourceManager.GetObject("CheckBox", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IncomBackground {
+            get {
+                object obj = ResourceManager.GetObject("IncomBackground", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IncomFullBG {
+            get {
+                object obj = ResourceManager.GetObject("IncomFullBG", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

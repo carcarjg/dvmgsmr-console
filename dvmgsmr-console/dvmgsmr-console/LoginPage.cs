@@ -39,6 +39,11 @@ namespace dvmgsmr_console
 		public LoginPage()
 		{
 			InitializeComponent();
+			string DTMD = DateTime.Now.Day.ToString();
+			DateTime M = DateTime.Now;
+			string DTMM = M.ToString("MMM");
+			string DTMY = DateTime.Now.Year.ToString();
+			daymonthyearLAB.Text = DTMD + " " + DTMM + " " + DTMY;
 			BUTlog.Enabled = false;
 		}
 
@@ -64,10 +69,28 @@ namespace dvmgsmr_console
 		private void BUTlog_Click(object sender, EventArgs e)
 		{
 			ButtonBeep();
+			bool loginperm = false;
 
 			//UserAuthCodeHere
 			//For rn just open the main page
 			if (us3rB0x == "ADMIN" && PS == "ADMIN")
+			{
+				UserInforStore.SigBox = "Network Control";
+				UserInforStore.UserRole = "ADMIN";
+				loginperm = true;
+			}
+			else if (us3rB0x == "CMTY" && PS == "CMTY")
+			{
+				UserInforStore.SigBox = "CMTY Central Sub";
+				UserInforStore.UserRole = "CMTY";
+				loginperm = true;
+			}
+			else
+			{
+				MessageBox.Show("Username/Password Incorrect");
+			}
+
+			if (loginperm == true)
 			{
 				using (Aes aesAlg = Aes.Create())
 				{
@@ -91,12 +114,8 @@ namespace dvmgsmr_console
 						}
 					}
 				}
-
+				loginperm = false;
 				MainForm.CLOSE = true;
-			}
-			else
-			{
-				MessageBox.Show("Username/Password Incorrect");
 			}
 		}
 
