@@ -45,6 +45,8 @@ namespace dvmgsmr_console
 				case "SIP":
 					break;
 			}
+			svraddrTXT.Text = Properties.Settings.Default.RC2WSAddr;
+			svrportTXT.Text = Properties.Settings.Default.RC2WSPort;
 		}
 
 		private void rc2BUT_Click(object sender, EventArgs e)
@@ -83,6 +85,19 @@ namespace dvmgsmr_console
 				catch (Exception ex) { }
 			}
 			else { }
+		}
+
+		private void saveBUT_Click(object sender, EventArgs e)
+		{
+			ButtonBeep();
+			if (svraddrTXT.Text != "" && svrportTXT.Text != "")
+			{
+				Properties.Settings.Default.RC2WSAddr = svraddrTXT.Text;
+				Properties.Settings.Default.RC2WSPort = svrportTXT.Text;
+			}
+			else { MessageBox.Show("Please Enter Server Information"); }
+			this.Close();
+			Properties.Settings.Default.Save();
 		}
 	}
 }

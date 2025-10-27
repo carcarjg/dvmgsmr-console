@@ -62,8 +62,10 @@ namespace dvmgsmr_console
 				{
 					CID = status.ChannelName.Substring(4);
 				}
-
-				CCH = status.ChannelName;
+				else
+				{
+					CCH = status.ChannelName;
+				}
 				WSC = client.IsWebSocketConnected;
 				RTCC = client.IsWebRtcConnected;
 				RTTX = client.IsTransmitting;

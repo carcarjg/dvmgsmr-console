@@ -16,6 +16,7 @@
 // (C) Nyx Gallini 2025
 //
 using System.Media;
+using Windows.Media.Playback;
 
 namespace dvmgsmr_console
 {
@@ -74,10 +75,18 @@ namespace dvmgsmr_console
 		private void logginbutton_Click(object sender, EventArgs e)
 		{
 			ButtonBeep();
-			loginPage1.Visible = true;
-			loginPage1.BringToFront();
-			logginbutton.Visible = false;
-			Administratorbut.Visible = false;
+			if (Properties.Settings.Default.ConnMODE == "RC2")
+			{
+				if (Properties.Settings.Default.RC2WSAddr != "" && Properties.Settings.Default.RC2WSPort != "")
+				{
+					loginPage1.Visible = true;
+					loginPage1.BringToFront();
+					logginbutton.Visible = false;
+					Administratorbut.Visible = false;
+				}
+				else { MessageBox.Show("Please Enter Server Information in the Administration settings"); }
+			}
+			else { MessageBox.Show("Please Enter Server Information in the Administration settings"); }
 		}
 	}
 }

@@ -17,6 +17,7 @@
 //
 using System.Media;
 using System.Xml.Linq;
+using Windows.Perception.People;
 
 namespace dvmgsmr_console
 {
@@ -65,11 +66,12 @@ namespace dvmgsmr_console
 			ACBicoPB.Visible = true;
 			ACBtimer.Enabled = true;
 			ACBtimer.Start();
+		}
 
-			int availslt = AddNewCall(HC, TG);
-			if (availslt != 99)
-			{
-			}
+		internal void updateACB(int HC, string TG)
+		{
+			ACBhcLAB.Text = string.Format("{0:x}", HC).ToUpper();
+			ACBtgLAB.Text = TG;
 		}
 
 		/// <summary>
@@ -99,11 +101,6 @@ namespace dvmgsmr_console
 				acbLAB1.Text = "Ready";
 				Removecall(ACBhcLAB.Text);
 				ResetBUTbg("ACB");
-				int aslot = 0;
-				bool found = false;
-				foreach (string s in acallsHC) { if (s == ACBhcLAB.Text) { found = true; break; } if (found != true) { aslot++; } }
-
-				//I kid you not I forgot where I was going with this... its 230am... so.. yea
 			}
 		}
 
@@ -294,13 +291,15 @@ namespace dvmgsmr_console
 			bool foundslot = false;
 			foreach (string s in acallsHC)
 			{
-				if (s == null)
+				if (s == null && foundslot != true)
 				{
 					foundslot = true;
-					break;
 				}
-				else if (availslot != 5 && foundslot != true) { availslot++; }
-				else { return 99; }
+				if (availslot != 5 && foundslot != true)
+				{
+					availslot++;
+				}
+				if (availslot == 5 && foundslot != true) { return 99; }
 			}
 
 			acallsHC[availslot] = headcode.ToUpper();
@@ -342,26 +341,19 @@ namespace dvmgsmr_console
 					C5lab2.Visible = true;
 					break;
 			}
+			ringACB(rid, TGNAME);
+			callcreateinprog = false;
 			return availslot;
 		}
 
 		internal void Removecall(string HC)
 		{
-			int availslot = 0;
-			bool foundslot = false;
-			foreach (string s in acallsHC)
-			{
-				if (s == HC)
-				{
-					foundslot = true;
-					break;
-				}
-				else if (availslot != 5 && foundslot != true) { availslot++; }
-				else { }
-			}
+			int availslot = CheckForCallHC(HC);
 
 			acallsHC[availslot] = null;
 			acallsTG[availslot] = null;
+			Connections.CID = "";
+			Connections.CCH = "";
 			switch (availslot)
 			{
 				case 0:
@@ -401,6 +393,8 @@ namespace dvmgsmr_console
 			}
 		}
 
+		private static bool callcreateinprog = false;
+
 		/// <summary>
 		/// Maintance Timer
 		/// </summary>
@@ -415,7 +409,137 @@ namespace dvmgsmr_console
 			string DTMY = DateTime.Now.Year.ToString();
 			daymonthyearLAB.Text = DTMD + " " + DTMM + " " + DTMY;
 
+			if (Connections.RXC == true && Connections.CID != "0" && Connections.CID != "" && Connections.CCH != "")
+			{
+				int checkedcall = CheckForCallTG(Connections.CCH);
+				if (checkedcall != 99)
+				{
+					if (acallsHC[checkedcall] == Connections.CID)
+					{
+						//Do nothing
+					}
+					else
+					{
+						UpdateCall(checkedcall, Connections.CID, Connections.CCH);
+					}
+				}
+				else
+				{
+					if (callcreateinprog != true)
+					{
+						callcreateinprog = true;
+						AddNewCall(int.Parse(Connections.CID), Connections.CCH);
+					}
+				}
+				checkedcall = 0;
+			}
+			else if (Connections.RXC == false)
+			{
+				Connections.CID = "0";
+				Connections.CCH = "";
+			}
+
 			//Check for New calls, if new calls exist, add them to the calls display
+		}
+
+		/// <summary>
+		/// Check for Call Using Headcode
+		/// </summary>
+		internal static int CheckForCallHC(string headcode)
+		{
+			int callID = 0;
+			foreach (string s in acallsHC)
+			{
+				if (s == headcode)
+				{
+					return callID;
+				}
+				else
+				{
+					if (callID != 5)
+					{
+						return 99;
+					}
+					else
+					{
+						callID++;
+					}
+				}
+			}
+			if (callID == 0) { return 99; } else { return callID; }
+		}
+
+		/// <summary>
+		/// Check for Call Using TG
+		/// </summary>
+		internal static int CheckForCallTG(string Talkgroup)
+		{
+			int callID = 0;
+			foreach (string s in acallsTG)
+			{
+				if (s == Talkgroup)
+				{
+					return callID;
+				}
+				else
+				{
+					if (callID != 5)
+					{
+						return 99;
+					}
+					else
+					{
+						callID++;
+					}
+				}
+			}
+			if (callID == 0) { return 99; } else { return callID; }
+		}
+
+		internal void UpdateCall(int callid, string HC, string TG)
+		{
+			int RID = int.Parse(HC);
+			HC = RID.ToString("X");
+			acallsHC[callid] = string.Format("{0:x}", HC).ToUpper();
+			acallsTG[callid] = TG;
+			switch (callid)
+			{
+				case 0:
+					C1lab1.Text = string.Format("{0:x}", HC).ToUpper();
+					C1lab2.Text = TG;
+					C1lab1.Visible = true;
+					C1lab2.Visible = true;
+					break;
+
+				case 1:
+					C2lab1.Text = string.Format("{0:x}", HC).ToUpper();
+					C2lab2.Text = TG;
+					C2lab1.Visible = true;
+					C2lab2.Visible = true;
+					break;
+
+				case 2:
+					C3lab1.Text = string.Format("{0:x}", HC).ToUpper();
+					C3lab2.Text = TG;
+					C3lab1.Visible = true;
+					C3lab2.Visible = true;
+					break;
+
+				case 3:
+					C4lab1.Text = string.Format("{0:x}", HC).ToUpper();
+					C4lab2.Text = TG;
+					C4lab1.Visible = true;
+					C4lab2.Visible = true;
+					break;
+
+				case 4:
+					C5lab1.Text = string.Format("{0:x}", HC).ToUpper();
+					C5lab2.Text = TG;
+					C5lab1.Visible = true;
+					C5lab2.Visible = true;
+					break;
+			}
+			updateACB(RID, TG);
 		}
 
 		internal void RC2Con()

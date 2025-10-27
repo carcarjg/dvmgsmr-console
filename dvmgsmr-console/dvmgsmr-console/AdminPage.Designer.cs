@@ -63,6 +63,7 @@
 			saveBUT.TabIndex = 2;
 			saveBUT.Text = "Save";
 			saveBUT.UseVisualStyleBackColor = true;
+			saveBUT.Click += saveBUT_Click;
 			// 
 			// label2
 			// 
