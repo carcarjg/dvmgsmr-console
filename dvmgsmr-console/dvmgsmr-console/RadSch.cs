@@ -15,6 +15,8 @@
 //
 // (C) Nyx Gallini 2025
 //
+///TODO:MXTMR needs to handle pending calls, Current ACBed call needs to be blue in the list, all others if they are in the list need to be Purple if pending, green if RXing,
+///ACB needs to also be able to switch between calls and put a call on "hold"
 using dvmgsmr_console.Properties;
 using Microsoft.VisualBasic;
 using System.Media;
