@@ -138,6 +138,7 @@ namespace dvmgsmr_console
 			else if (calltype == "Phone")
 			{
 			}
+
 			ACBtimer.Start();
 		}
 
@@ -156,6 +157,7 @@ namespace dvmgsmr_console
 		{
 			if (callringging == true)
 			{
+				callwaitingpickup = false;
 				acbflashcycle = false;
 				callringging = false;
 				activecall = true;
@@ -172,6 +174,25 @@ namespace dvmgsmr_console
 				ACBicoPB.Visible = false;
 				activecall = false;
 				acbLAB1.Text = "Ready";
+				int call = CheckForCallTG(ACBtgLAB.Text);
+				switch (call)
+				{
+					case 0:
+						ResetBUTbg("C1");
+						break;
+
+					case 1:
+						ResetBUTbg("C2");
+						break;
+
+					case 2:
+						ResetBUTbg("C3");
+						break;
+
+					case 3:
+						ResetBUTbg("C4");
+						break;
+				}
 				Removecall(ACBhcLAB.Text);
 				ResetBUTbg("ACB");
 			}
@@ -268,6 +289,8 @@ namespace dvmgsmr_console
 					C1BUT.BackColor = Color.White;
 					C1lab1.BackColor = Color.White;
 					C1lab2.BackColor = Color.White;
+					C1lab1.ForeColor = Color.Black;
+					C1lab2.ForeColor = Color.Black;
 					break;
 
 				case "C2":
@@ -276,6 +299,8 @@ namespace dvmgsmr_console
 					C2BUT.BackColor = Color.White;
 					C2lab1.BackColor = Color.White;
 					C2lab2.BackColor = Color.White;
+					C2lab1.ForeColor = Color.Black;
+					C2lab2.ForeColor = Color.Black;
 					break;
 
 				case "C3":
@@ -284,6 +309,8 @@ namespace dvmgsmr_console
 					C3BUT.BackColor = Color.White;
 					C3lab1.BackColor = Color.White;
 					C3lab2.BackColor = Color.White;
+					C3lab1.ForeColor = Color.Black;
+					C3lab2.ForeColor = Color.Black;
 					break;
 
 				case "C4":
@@ -292,6 +319,8 @@ namespace dvmgsmr_console
 					C4BUT.BackColor = Color.White;
 					C4lab1.BackColor = Color.White;
 					C4lab2.BackColor = Color.White;
+					C4lab1.ForeColor = Color.Black;
+					C4lab2.ForeColor = Color.Black;
 					break;
 
 				case "C5":
@@ -300,25 +329,31 @@ namespace dvmgsmr_console
 					C5BUT.BackColor = Color.White;
 					C5lab1.BackColor = Color.White;
 					C5lab2.BackColor = Color.White;
+					C5lab1.ForeColor = Color.Black;
+					C5lab2.ForeColor = Color.Black;
 					break;
 			}
 		}
 
 		internal static void ButtonBeep()
 		{
-			string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
-			string wavFileName = "Sounds\\screen_beep.wav";
-			string wavFilePath = Path.Combine(currentDirectory, wavFileName);
-			if (File.Exists(wavFilePath))
+			if (Settings.Default.ButtonBeep == true)
 			{
-				try
+				string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
+				string wavFileName = "Sounds\\screen_beep.wav";
+				string wavFilePath = Path.Combine(currentDirectory, wavFileName);
+				if (File.Exists(wavFilePath))
 				{
-					using (SoundPlayer player = new SoundPlayer(wavFilePath))
+					try
 					{
-						player.Play();
+						using (SoundPlayer player = new SoundPlayer(wavFilePath))
+						{
+							player.Play();
+						}
 					}
+					catch (Exception ex) { }
 				}
-				catch (Exception) { }
+				else { }
 			}
 		}
 
@@ -384,6 +419,9 @@ namespace dvmgsmr_console
 					C1lab2.Text = TGNAME;
 					C1lab1.Visible = true;
 					C1lab2.Visible = true;
+					C1lab1.ForeColor = Color.White;
+					C1lab2.ForeColor = Color.White;
+					changeBUTbg("C1", Color.Blue);
 					break;
 
 				case 1:
@@ -391,6 +429,9 @@ namespace dvmgsmr_console
 					C2lab2.Text = TGNAME;
 					C2lab1.Visible = true;
 					C2lab2.Visible = true;
+					C2lab1.ForeColor = Color.White;
+					C2lab2.ForeColor = Color.White;
+					changeBUTbg("C2", Color.Blue);
 					break;
 
 				case 2:
@@ -398,6 +439,9 @@ namespace dvmgsmr_console
 					C3lab2.Text = TGNAME;
 					C3lab1.Visible = true;
 					C3lab2.Visible = true;
+					C3lab1.ForeColor = Color.White;
+					C3lab2.ForeColor = Color.White;
+					changeBUTbg("C3", Color.Blue);
 					break;
 
 				case 3:
@@ -405,6 +449,9 @@ namespace dvmgsmr_console
 					C4lab2.Text = TGNAME;
 					C4lab1.Visible = true;
 					C4lab2.Visible = true;
+					C4lab1.ForeColor = Color.White;
+					C4lab2.ForeColor = Color.White;
+					changeBUTbg("C4", Color.Blue);
 					break;
 
 				case 4:
@@ -412,6 +459,9 @@ namespace dvmgsmr_console
 					C5lab2.Text = TGNAME;
 					C5lab1.Visible = true;
 					C5lab2.Visible = true;
+					C5lab1.ForeColor = Color.White;
+					C5lab2.ForeColor = Color.White;
+					changeBUTbg("C5", Color.Blue);
 					break;
 			}
 			ringACB(rid, TGNAME);
@@ -1059,10 +1109,12 @@ namespace dvmgsmr_console
 
 		private void CallBut_Click(object sender, EventArgs e)
 		{
+			ButtonBeep();
 		}
 
 		private void SettingBUT_Click(object sender, EventArgs e)
 		{
+			ButtonBeep();
 			SettingsForm SF = new SettingsForm();
 			SF.ShowDialog();
 		}

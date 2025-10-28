@@ -15,6 +15,7 @@
 //
 // (C) Nyx Gallini 2025
 //
+using dvmgsmr_console.Properties;
 using System.Media;
 using Windows.Media.Playback;
 
@@ -38,21 +39,24 @@ namespace dvmgsmr_console
 
 		internal static void ButtonBeep()
 		{
-			string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
-			string wavFileName = "Sounds\\screen_beep.wav";
-			string wavFilePath = Path.Combine(currentDirectory, wavFileName);
-			if (File.Exists(wavFilePath))
+			if (Settings.Default.ButtonBeep == true)
 			{
-				try
+				string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
+				string wavFileName = "Sounds\\screen_beep.wav";
+				string wavFilePath = Path.Combine(currentDirectory, wavFileName);
+				if (File.Exists(wavFilePath))
 				{
-					using (SoundPlayer player = new SoundPlayer(wavFilePath))
+					try
 					{
-						player.Play();
+						using (SoundPlayer player = new SoundPlayer(wavFilePath))
+						{
+							player.Play();
+						}
 					}
+					catch (Exception ex) { }
 				}
-				catch (Exception) { }
+				else { }
 			}
-			else { }
 		}
 
 		private void MaintTMR_Tick(object sender, EventArgs e)

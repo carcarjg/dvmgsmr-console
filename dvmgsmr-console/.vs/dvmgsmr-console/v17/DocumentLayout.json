@@ -3,32 +3,28 @@
   "WorkspaceRootPath": "B:\\dvmgsmr-console\\dvmgsmr-console\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FCE21B7E-3009-41BB-A732-D34833A97C89}|dvmgsmr-console\\dvmgsmr-console.csproj|b:\\dvmgsmr-console\\dvmgsmr-console\\dvmgsmr-console\\radsch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FCE21B7E-3009-41BB-A732-D34833A97C89}|dvmgsmr-console\\dvmgsmr-console.csproj|solutionrelative:dvmgsmr-console\\radsch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FCE21B7E-3009-41BB-A732-D34833A97C89}|dvmgsmr-console\\dvmgsmr-console.csproj|b:\\dvmgsmr-console\\dvmgsmr-console\\dvmgsmr-console\\settingsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FCE21B7E-3009-41BB-A732-D34833A97C89}|dvmgsmr-console\\dvmgsmr-console.csproj|solutionrelative:dvmgsmr-console\\settingsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FCE21B7E-3009-41BB-A732-D34833A97C89}|dvmgsmr-console\\dvmgsmr-console.csproj|b:\\dvmgsmr-console\\dvmgsmr-console\\dvmgsmr-console\\connections.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FCE21B7E-3009-41BB-A732-D34833A97C89}|dvmgsmr-console\\dvmgsmr-console.csproj|solutionrelative:dvmgsmr-console\\connections.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FCE21B7E-3009-41BB-A732-D34833A97C89}|dvmgsmr-console\\dvmgsmr-console.csproj|b:\\dvmgsmr-console\\dvmgsmr-console\\dvmgsmr-console\\settingsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{FCE21B7E-3009-41BB-A732-D34833A97C89}|dvmgsmr-console\\dvmgsmr-console.csproj|solutionrelative:dvmgsmr-console\\settingsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{FCE21B7E-3009-41BB-A732-D34833A97C89}|dvmgsmr-console\\dvmgsmr-console.csproj|b:\\dvmgsmr-console\\dvmgsmr-console\\dvmgsmr-console\\radsch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FCE21B7E-3009-41BB-A732-D34833A97C89}|dvmgsmr-console\\dvmgsmr-console.csproj|solutionrelative:dvmgsmr-console\\radsch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FCE21B7E-3009-41BB-A732-D34833A97C89}|dvmgsmr-console\\dvmgsmr-console.csproj|b:\\dvmgsmr-console\\dvmgsmr-console\\dvmgsmr-console\\radsch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{FCE21B7E-3009-41BB-A732-D34833A97C89}|dvmgsmr-console\\dvmgsmr-console.csproj|solutionrelative:dvmgsmr-console\\radsch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FCE21B7E-3009-41BB-A732-D34833A97C89}|dvmgsmr-console\\dvmgsmr-console.csproj|b:\\dvmgsmr-console\\dvmgsmr-console\\dvmgsmr-console\\adminpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{FCE21B7E-3009-41BB-A732-D34833A97C89}|dvmgsmr-console\\dvmgsmr-console.csproj|solutionrelative:dvmgsmr-console\\adminpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{FCE21B7E-3009-41BB-A732-D34833A97C89}|dvmgsmr-console\\dvmgsmr-console.csproj|b:\\dvmgsmr-console\\dvmgsmr-console\\dvmgsmr-console\\loginpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FCE21B7E-3009-41BB-A732-D34833A97C89}|dvmgsmr-console\\dvmgsmr-console.csproj|solutionrelative:dvmgsmr-console\\loginpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FCE21B7E-3009-41BB-A732-D34833A97C89}|dvmgsmr-console\\dvmgsmr-console.csproj|b:\\dvmgsmr-console\\dvmgsmr-console\\dvmgsmr-console\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FCE21B7E-3009-41BB-A732-D34833A97C89}|dvmgsmr-console\\dvmgsmr-console.csproj|solutionrelative:dvmgsmr-console\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FCE21B7E-3009-41BB-A732-D34833A97C89}|dvmgsmr-console\\dvmgsmr-console.csproj|b:\\dvmgsmr-console\\dvmgsmr-console\\dvmgsmr-console\\loginpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FCE21B7E-3009-41BB-A732-D34833A97C89}|dvmgsmr-console\\dvmgsmr-console.csproj|solutionrelative:dvmgsmr-console\\loginpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FCE21B7E-3009-41BB-A732-D34833A97C89}|dvmgsmr-console\\dvmgsmr-console.csproj|B:\\dvmgsmr-console\\dvmgsmr-console\\dvmgsmr-console\\radsch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{FCE21B7E-3009-41BB-A732-D34833A97C89}|dvmgsmr-console\\dvmgsmr-console.csproj|solutionrelative:dvmgsmr-console\\radsch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FCE21B7E-3009-41BB-A732-D34833A97C89}|dvmgsmr-console\\dvmgsmr-console.csproj|B:\\dvmgsmr-console\\dvmgsmr-console\\dvmgsmr-console\\loginpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -46,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 189,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,52 +50,40 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "SettingsForm.cs [Design]",
+              "DocumentIndex": 0,
+              "Title": "SettingsForm.cs",
               "DocumentMoniker": "B:\\dvmgsmr-console\\dvmgsmr-console\\dvmgsmr-console\\SettingsForm.cs",
               "RelativeDocumentMoniker": "dvmgsmr-console\\SettingsForm.cs",
-              "ToolTip": "B:\\dvmgsmr-console\\dvmgsmr-console\\dvmgsmr-console\\SettingsForm.cs [Design]",
-              "RelativeToolTip": "dvmgsmr-console\\SettingsForm.cs [Design]",
+              "ToolTip": "B:\\dvmgsmr-console\\dvmgsmr-console\\dvmgsmr-console\\SettingsForm.cs",
+              "RelativeToolTip": "dvmgsmr-console\\SettingsForm.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAAAYwFYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-28T05:00:37.392Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-10-28T15:24:57.589Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AdminPage.cs [Design]",
-              "DocumentMoniker": "B:\\dvmgsmr-console\\dvmgsmr-console\\dvmgsmr-console\\AdminPage.cs",
-              "RelativeDocumentMoniker": "dvmgsmr-console\\AdminPage.cs",
-              "ToolTip": "B:\\dvmgsmr-console\\dvmgsmr-console\\dvmgsmr-console\\AdminPage.cs [Design]",
-              "RelativeToolTip": "dvmgsmr-console\\AdminPage.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T17:56:27.151Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "LoginPage.cs",
               "DocumentMoniker": "B:\\dvmgsmr-console\\dvmgsmr-console\\dvmgsmr-console\\LoginPage.cs",
               "RelativeDocumentMoniker": "dvmgsmr-console\\LoginPage.cs",
               "ToolTip": "B:\\dvmgsmr-console\\dvmgsmr-console\\dvmgsmr-console\\LoginPage.cs",
               "RelativeToolTip": "dvmgsmr-console\\LoginPage.cs",
-              "ViewState": "AgIAAGIAAAAAAAAAAAAgwJAAAAADAAAAAAAAAA==",
+              "ViewState": "AgIAAGIAAAAAAAAAAADwv48AAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-26T14:33:06.203Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "LoginPage.cs [Design]",
               "DocumentMoniker": "B:\\dvmgsmr-console\\dvmgsmr-console\\dvmgsmr-console\\LoginPage.cs",
               "RelativeDocumentMoniker": "dvmgsmr-console\\LoginPage.cs",
               "ToolTip": "B:\\dvmgsmr-console\\dvmgsmr-console\\dvmgsmr-console\\LoginPage.cs [Design]",
               "RelativeToolTip": "dvmgsmr-console\\LoginPage.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-26T18:47:12.672Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-10-26T18:47:12.672Z"
             },
             {
               "$type": "Document",
@@ -116,20 +100,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "RadSch.cs",
               "DocumentMoniker": "B:\\dvmgsmr-console\\dvmgsmr-console\\dvmgsmr-console\\RadSch.cs",
               "RelativeDocumentMoniker": "dvmgsmr-console\\RadSch.cs",
               "ToolTip": "B:\\dvmgsmr-console\\dvmgsmr-console\\dvmgsmr-console\\RadSch.cs",
               "RelativeToolTip": "dvmgsmr-console\\RadSch.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABNAAAAAAAAAA==",
+              "ViewState": "AgIAACoEAAAAAAAAAADwv1cEAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-26T05:29:00.017Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "RadSch.cs [Design]",
               "DocumentMoniker": "B:\\dvmgsmr-console\\dvmgsmr-console\\dvmgsmr-console\\RadSch.cs",
               "RelativeDocumentMoniker": "dvmgsmr-console\\RadSch.cs",
@@ -141,20 +125,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "MainForm.cs",
               "DocumentMoniker": "B:\\dvmgsmr-console\\dvmgsmr-console\\dvmgsmr-console\\MainForm.cs",
               "RelativeDocumentMoniker": "dvmgsmr-console\\MainForm.cs",
               "ToolTip": "B:\\dvmgsmr-console\\dvmgsmr-console\\dvmgsmr-console\\MainForm.cs",
               "RelativeToolTip": "dvmgsmr-console\\MainForm.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAgwFgAAABeAAAAAAAAAA==",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAADoAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-26T01:40:30.327Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "MainForm.cs [Design]",
               "DocumentMoniker": "B:\\dvmgsmr-console\\dvmgsmr-console\\dvmgsmr-console\\MainForm.cs",
               "RelativeDocumentMoniker": "dvmgsmr-console\\MainForm.cs",

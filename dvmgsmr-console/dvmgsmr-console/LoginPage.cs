@@ -16,6 +16,7 @@
 // (C) Nyx Gallini 2025
 //
 
+using dvmgsmr_console.Properties;
 using Org.BouncyCastle.Utilities;
 using System;
 using System.Collections;
@@ -123,21 +124,24 @@ namespace dvmgsmr_console
 
 		internal static void ButtonBeep()
 		{
-			string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
-			string wavFileName = "Sounds\\screen_beep.wav";
-			string wavFilePath = Path.Combine(currentDirectory, wavFileName);
-			if (File.Exists(wavFilePath))
+			if (Settings.Default.ButtonBeep == true)
 			{
-				try
+				string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
+				string wavFileName = "Sounds\\screen_beep.wav";
+				string wavFilePath = Path.Combine(currentDirectory, wavFileName);
+				if (File.Exists(wavFilePath))
 				{
-					using (SoundPlayer player = new SoundPlayer(wavFilePath))
+					try
 					{
-						player.Play();
+						using (SoundPlayer player = new SoundPlayer(wavFilePath))
+						{
+							player.Play();
+						}
 					}
+					catch (Exception ex) { }
 				}
-				catch (Exception ex) { }
+				else { }
 			}
-			else { }
 		}
 
 		private void KBBUT_Click(object sender, EventArgs e)

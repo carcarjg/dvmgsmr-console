@@ -94,5 +94,29 @@ namespace dvmgsmr_console.Properties {
                 this["RC2SigCHP"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool RingerOff {
+            get {
+                return ((bool)(this["RingerOff"]));
+            }
+            set {
+                this["RingerOff"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ButtonBeep {
+            get {
+                return ((bool)(this["ButtonBeep"]));
+            }
+            set {
+                this["ButtonBeep"] = value;
+            }
+        }
     }
 }
