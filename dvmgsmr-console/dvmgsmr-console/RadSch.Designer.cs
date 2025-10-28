@@ -309,6 +309,7 @@
 			SettingBUT.Size = new Size(89, 91);
 			SettingBUT.TabIndex = 39;
 			SettingBUT.UseVisualStyleBackColor = false;
+			SettingBUT.Click += SettingBUT_Click;
 			// 
 			// BroadCastBUT
 			// 

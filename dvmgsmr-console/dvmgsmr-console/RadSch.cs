@@ -20,6 +20,7 @@ using Microsoft.VisualBasic;
 using System.Media;
 using System.Xml.Linq;
 using Windows.Perception.People;
+using Windows.UI.Composition;
 
 namespace dvmgsmr_console
 {
@@ -27,9 +28,19 @@ namespace dvmgsmr_console
 	{
 		private bool acbflashcycle;
 
+		private bool fireonce;
+
 		internal static bool callringging;
 
 		internal static bool activecall;
+
+		internal static Dictionary<int, string> Pending_CallsRID = new Dictionary<int, string>();
+
+		internal static Dictionary<int, string> Pending_CallsTG = new Dictionary<int, string>();
+
+		internal static Dictionary<int, string> Pending_CallsType = new Dictionary<int, string>();
+
+		internal static Dictionary<string, int> TG_to_ConID = new Dictionary<string, int>();
 
 		internal static string[] acallsHC = new string[4];
 
@@ -40,6 +51,10 @@ namespace dvmgsmr_console
 		internal static int selCallID;
 
 		private static readonly CancellationTokenSource cts = new CancellationTokenSource();
+
+		internal static bool callspending;
+
+		internal static bool callwaitingpickup;
 
 		/// <summary>
 		/// Tab 5 = Incoming (Default)
@@ -301,7 +316,7 @@ namespace dvmgsmr_console
 						player.Play();
 					}
 				}
-				catch (Exception ex) { }
+				catch (Exception) { }
 			}
 		}
 
@@ -334,7 +349,7 @@ namespace dvmgsmr_console
 							player.Play();
 						}
 					}
-					catch (Exception ex) { }
+					catch (Exception) { }
 				}
 				else { }
 			}
@@ -405,11 +420,37 @@ namespace dvmgsmr_console
 		internal void Removecall(string HC)
 		{
 			int availslot = CheckForCallHC(HC);
+			int gotvalue;
+			TG_to_ConID.TryGetValue(acallsTG[availslot], out gotvalue);
+			switch (gotvalue)
+			{
+				case 1:
+					Connections.CID1 = "";
+					break;
 
+				case 2:
+					Connections.CID2 = "";
+					break;
+
+				case 3:
+					Connections.CID3 = "";
+					break;
+
+				case 4:
+					Connections.CID4 = "";
+					break;
+
+				case 5:
+					Connections.CID5 = "";
+					break;
+
+				case 6:
+					Connections.CID6 = "";
+					break;
+			}
 			acallsHC[availslot] = null;
 			acallsTG[availslot] = null;
-			Connections.CID = "";
-			Connections.CCH = "";
+
 			switch (availslot)
 			{
 				case 0:
@@ -451,6 +492,80 @@ namespace dvmgsmr_console
 
 		private static bool callcreateinprog = false;
 
+		private static bool createcallpendinprog = false;
+
+		internal void AddPendingCall(int rid, string TGNAME)
+		{
+			int clid;
+			TG_to_ConID.TryGetValue(TGNAME, out clid);
+			if (clid != 0)
+			{
+				Pending_CallsRID.TryAdd(clid, rid.ToString());
+				Pending_CallsTG.TryAdd(clid, TGNAME);
+			}
+
+			string headcode = string.Format("{0:x}", rid);
+			int availslot = 0;
+			bool foundslot = false;
+			foreach (string s in acallsHC)
+			{
+				if (s == null && foundslot != true)
+				{
+					foundslot = true;
+				}
+				if (availslot != 5 && foundslot != true)
+				{
+					availslot++;
+				}
+				if (availslot == 5 && foundslot != true) { }
+			}
+			if (CheckForCallTG(TGNAME) == 99 && createcallpendinprog == false)
+			{
+				createcallpendinprog = true;
+				acallsHC[availslot] = headcode.ToUpper();
+				acallsTG[availslot] = TGNAME;
+				switch (availslot)
+				{
+					case 0:
+						C1lab1.Text = headcode.ToUpper();
+						C1lab2.Text = TGNAME;
+						C1lab1.Visible = true;
+						C1lab2.Visible = true;
+						break;
+
+					case 1:
+						C2lab1.Text = headcode.ToUpper();
+						C2lab2.Text = TGNAME;
+						C2lab1.Visible = true;
+						C2lab2.Visible = true;
+						break;
+
+					case 2:
+						C3lab1.Text = headcode.ToUpper();
+						C3lab2.Text = TGNAME;
+						C3lab1.Visible = true;
+						C3lab2.Visible = true;
+						break;
+
+					case 3:
+						C4lab1.Text = headcode.ToUpper();
+						C4lab2.Text = TGNAME;
+						C4lab1.Visible = true;
+						C4lab2.Visible = true;
+						break;
+
+					case 4:
+						C5lab1.Text = headcode.ToUpper();
+						C5lab2.Text = TGNAME;
+						C5lab1.Visible = true;
+						C5lab2.Visible = true;
+						break;
+				}
+			}
+
+			callspending = true;
+		}
+
 		/// <summary>
 		/// Maintance Timer
 		/// </summary>
@@ -465,6 +580,227 @@ namespace dvmgsmr_console
 			string DTMY = DateTime.Now.Year.ToString();
 			daymonthyearLAB.Text = DTMD + " " + DTMM + " " + DTMY;
 
+			if (Connections.RXC6 == true)
+			{
+				if (Connections.CID6 != "0" && Connections.CID6 != "")
+				{
+					int checkedcall = CheckForCallTG(Connections.CCH6);
+					if (checkedcall != 99)
+					{
+						if (acallsHC[checkedcall] == Connections.CID6)
+						{
+							//Do nothing
+						}
+						else
+						{
+							UpdateCall(checkedcall, Connections.CID6, Connections.CCH6);
+						}
+					}
+					else
+					{
+						if (callcreateinprog != true && activecall != true && callwaitingpickup != true)
+						{
+							callcreateinprog = true;
+							callwaitingpickup = true;
+							calltype = "TRAIN";
+							AddNewCall(int.Parse(Connections.CID6), Connections.CCH6);
+						}
+						else
+						{
+							AddPendingCall(int.Parse(Connections.CID6), Connections.CCH6);
+
+							callspending = true;
+
+							///You Left off here
+						}
+					}
+					checkedcall = 0;
+				}
+			}
+			else { Connections.CID6 = "0"; }
+			if (Connections.RXC1 == true)
+			{
+				if (Connections.CID1 != "0" && Connections.CID1 != "")
+				{
+					int checkedcall = CheckForCallTG(Connections.CCH1);
+					if (checkedcall != 99)
+					{
+						if (acallsHC[checkedcall] == Connections.CID1)
+						{
+							//Do nothing
+						}
+						else
+						{
+							UpdateCall(checkedcall, Connections.CID1, Connections.CCH1);
+						}
+					}
+					else
+					{
+						if (callcreateinprog != true && activecall != true && callwaitingpickup != true)
+						{
+							callcreateinprog = true;
+							callwaitingpickup = true;
+							calltype = "TRAIN";
+							AddNewCall(int.Parse(Connections.CID1), Connections.CCH1);
+						}
+						else
+						{
+							AddPendingCall(int.Parse(Connections.CID1), Connections.CCH1);
+
+							callspending = true;
+						}
+					}
+					checkedcall = 0;
+				}
+			}
+			else { Connections.CID1 = "0"; }
+			if (Connections.RXC2 == true)
+			{
+				if (Connections.CID2 != "0" && Connections.CID2 != "")
+				{
+					int checkedcall = CheckForCallTG(Connections.CCH2);
+					if (checkedcall != 99)
+					{
+						if (acallsHC[checkedcall] == Connections.CID2)
+						{
+							//Do nothing
+						}
+						else
+						{
+							UpdateCall(checkedcall, Connections.CID2, Connections.CCH2);
+						}
+					}
+					else
+					{
+						if (callcreateinprog != true && activecall != true && callwaitingpickup != true)
+						{
+							callcreateinprog = true;
+							callwaitingpickup = true;
+							calltype = "TRAIN";
+							AddNewCall(int.Parse(Connections.CID2), Connections.CCH2);
+						}
+						else
+						{
+							AddPendingCall(int.Parse(Connections.CID2), Connections.CCH2);
+
+							callspending = true;
+						}
+					}
+					checkedcall = 0;
+				}
+			}
+			else { Connections.CID2 = "0"; }
+			if (Connections.RXC3 == true)
+			{
+				if (Connections.CID3 != "0" && Connections.CID3 != "")
+				{
+					int checkedcall = CheckForCallTG(Connections.CCH3);
+					if (checkedcall != 99)
+					{
+						if (acallsHC[checkedcall] == Connections.CID3)
+						{
+							//Do nothing
+						}
+						else
+						{
+							UpdateCall(checkedcall, Connections.CID3, Connections.CCH3);
+						}
+					}
+					else
+					{
+						if (callcreateinprog != true && activecall != true && callwaitingpickup != true)
+						{
+							callcreateinprog = true;
+							callwaitingpickup = true;
+							calltype = "TRAIN";
+							AddNewCall(int.Parse(Connections.CID3), Connections.CCH3);
+						}
+						else
+						{
+							AddPendingCall(int.Parse(Connections.CID3), Connections.CCH3);
+
+							callspending = true;
+						}
+					}
+					checkedcall = 0;
+				}
+			}
+			else { Connections.CID3 = "0"; }
+			if (Connections.RXC4 == true)
+			{
+				if (Connections.CID4 != "0" && Connections.CID4 != "")
+				{
+					int checkedcall = CheckForCallTG(Connections.CCH4);
+					if (checkedcall != 99)
+					{
+						if (acallsHC[checkedcall] == Connections.CID4)
+						{
+							//Do nothing
+						}
+						else
+						{
+							UpdateCall(checkedcall, Connections.CID4, Connections.CCH4);
+						}
+					}
+					else
+					{
+						if (callcreateinprog != true && activecall != true && callwaitingpickup != true)
+						{
+							callcreateinprog = true;
+							callwaitingpickup = true;
+							calltype = "TRAIN";
+							AddNewCall(int.Parse(Connections.CID4), Connections.CCH4);
+						}
+						else
+						{
+							AddPendingCall(int.Parse(Connections.CID4), Connections.CCH4);
+
+							callspending = true;
+						}
+					}
+					checkedcall = 0;
+				}
+			}
+			else { Connections.CID4 = "0"; }
+			if (Connections.RXC5 == true)
+			{
+				if (Connections.CID5 != "0" && Connections.CID5 != "")
+				{
+					int checkedcall = CheckForCallTG(Connections.CCH5);
+					if (checkedcall != 99)
+					{
+						if (acallsHC[checkedcall] == Connections.CID5)
+						{
+							//Do nothing
+						}
+						else
+						{
+							UpdateCall(checkedcall, Connections.CID5, Connections.CCH5);
+						}
+					}
+					else
+					{
+						if (callcreateinprog != true && activecall != true && callwaitingpickup != true)
+						{
+							callcreateinprog = true;
+							callwaitingpickup = true;
+							calltype = "TRAIN";
+							AddNewCall(int.Parse(Connections.CID5), Connections.CCH5);
+						}
+						else
+						{
+							AddPendingCall(int.Parse(Connections.CID5), Connections.CCH5);
+
+							callspending = true;
+						}
+					}
+					checkedcall = 0;
+				}
+			}
+			else { Connections.CID5 = "0"; }
+			/*
+
+			//Old Stuff
 			if (Connections.RXC == true && Connections.CID != "0" && Connections.CID != "" && Connections.CCH != "")
 			{
 				int checkedcall = CheckForCallTG(Connections.CCH);
@@ -494,6 +830,24 @@ namespace dvmgsmr_console
 			{
 				Connections.CID = "0";
 				Connections.CCH = "";
+			}
+			*/
+			if (fireonce == false)
+			{
+				do { Thread.Sleep(1); } while (Connections.CCH1 == "");
+				if (Settings.Default.RC2NumbCH >= 2) { do { Thread.Sleep(1); } while (Connections.CCH2 == ""); }
+				if (Settings.Default.RC2NumbCH >= 3) { do { Thread.Sleep(1); } while (Connections.CCH3 == ""); }
+				if (Settings.Default.RC2NumbCH >= 4) { do { Thread.Sleep(1); } while (Connections.CCH4 == ""); }
+				if (Settings.Default.RC2NumbCH == 5) { do { Thread.Sleep(1); } while (Connections.CCH5 == ""); }
+				if (Settings.Default.RC2SigCHP == true) { do { Thread.Sleep(1); } while (Connections.CCH6 == ""); }
+
+				TG_to_ConID.Add(Connections.CCH1, 1);
+				if (Settings.Default.RC2NumbCH >= 2) { TG_to_ConID.Add(Connections.CCH2, 2); }
+				if (Settings.Default.RC2NumbCH >= 3) { TG_to_ConID.Add(Connections.CCH3, 3); }
+				if (Settings.Default.RC2NumbCH >= 4) { TG_to_ConID.Add(Connections.CCH4, 4); }
+				if (Settings.Default.RC2NumbCH >= 5) { TG_to_ConID.Add(Connections.CCH5, 5); }
+				if (Settings.Default.RC2SigCHP == true) { TG_to_ConID.Add(Connections.CCH6, 6); }
+				fireonce = true;
 			}
 
 			//Check for New calls, if new calls exist, add them to the calls display
@@ -614,7 +968,17 @@ namespace dvmgsmr_console
 
 			if (WSA != null && WSP != 0)
 			{
-				Connections.RC2(cts.Token, WSA, WSP, TXA, RXA);
+				///
+				///
+				///TODO: Dynamic, Currently Hardcoded to 1 Connection
+				///
+				///
+				Connections.RC2(cts.Token, WSA, WSP, TXA, RXA, 1);
+				if (Settings.Default.RC2NumbCH >= 2) { Connections.RC2(cts.Token, WSA, WSP + 1, TXA, RXA, 2); }
+				if (Settings.Default.RC2NumbCH >= 3) { Connections.RC2(cts.Token, WSA, WSP + 2, TXA, RXA, 3); }
+				if (Settings.Default.RC2NumbCH >= 4) { Connections.RC2(cts.Token, WSA, WSP + 3, TXA, RXA, 4); }
+				if (Settings.Default.RC2NumbCH >= 5) { Connections.RC2(cts.Token, WSA, WSP + 4, TXA, RXA, 5); }
+				if (Settings.Default.RC2SigCHP == true) { Connections.RC2(cts.Token, WSA, WSP + 5, TXA, RXA, 6); }
 			}
 			else
 			{
@@ -693,6 +1057,12 @@ namespace dvmgsmr_console
 
 		private void CallBut_Click(object sender, EventArgs e)
 		{
+		}
+
+		private void SettingBUT_Click(object sender, EventArgs e)
+		{
+			SettingsForm SF = new SettingsForm();
+			SF.ShowDialog();
 		}
 	}
 }
