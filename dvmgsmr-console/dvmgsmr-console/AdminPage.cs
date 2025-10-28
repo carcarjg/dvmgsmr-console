@@ -50,25 +50,63 @@ namespace dvmgsmr_console
 			switch (Properties.Settings.Default.RC2NumbCH)
 			{
 				case 1:
+					button1.BackColor = Color.Blue;
+					button2.BackColor = SystemColors.Control;
+					button3.BackColor = SystemColors.Control;
+					button4.BackColor = SystemColors.Control;
+					button5.BackColor = SystemColors.Control;
 					break;
 
 				case 2:
+					button1.BackColor = SystemColors.Control;
+					button2.BackColor = Color.Blue;
+					button3.BackColor = SystemColors.Control;
+					button4.BackColor = SystemColors.Control;
+					button5.BackColor = SystemColors.Control;
 					break;
 
 				case 3:
+					button1.BackColor = SystemColors.Control;
+					button2.BackColor = SystemColors.Control;
+					button3.BackColor = Color.Blue;
+					button4.BackColor = SystemColors.Control;
+					button5.BackColor = SystemColors.Control;
 					break;
 
 				case 4:
+					button1.BackColor = SystemColors.Control;
+					button2.BackColor = SystemColors.Control;
+					button3.BackColor = SystemColors.Control;
+					button4.BackColor = Color.Blue;
+					button5.BackColor = SystemColors.Control;
 					break;
 
 				case 5:
+					button1.BackColor = SystemColors.Control;
+					button2.BackColor = SystemColors.Control;
+					button3.BackColor = SystemColors.Control;
+					button4.BackColor = SystemColors.Control;
+					button5.BackColor = Color.Blue;
 					break;
 
 				default:
+					button1.BackColor = Color.Blue;
+					button2.BackColor = SystemColors.Control;
+					button3.BackColor = SystemColors.Control;
+					button4.BackColor = SystemColors.Control;
+					button5.BackColor = SystemColors.Control;
 					break;
 			}
-			if (Properties.Settings.Default.RC2SigCHP) { }
-			else { }
+			if (Properties.Settings.Default.RC2SigCHP)
+			{
+				yesBUT.BackColor = Color.Blue;
+				noBUT.BackColor = SystemColors.Control;
+			}
+			else
+			{
+				yesBUT.BackColor = SystemColors.Control;
+				noBUT.BackColor = Color.Blue;
+			}
 		}
 
 		private void rc2BUT_Click(object sender, EventArgs e)
@@ -124,7 +162,7 @@ namespace dvmgsmr_console
 
 		private void oskLaunchBUT_Click(object sender, EventArgs e)
 		{
-			System.Diagnostics.Process.Start("osk.exe");
+			try { System.Diagnostics.Process.Start("osk.exe"); } catch (Exception) { }
 		}
 
 		private void yesnoBUT_Click(object sender, EventArgs e)
