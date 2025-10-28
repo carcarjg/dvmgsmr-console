@@ -47,8 +47,10 @@ namespace dvmgsmr_console
 			client.SetSpeakerDevice(rxaudio);
 
 			// Subscribe to all events
-			client.WebSocketConnected += (s, e) => Console.WriteLine("WS Connected");
-			client.WebRtcConnected += (s, e) => Console.WriteLine("RTC Connected");
+			client.WebSocketConnected += (s, e) => WSC = true;
+			client.WebRtcConnected += (s, e) => RTCC = true;
+			client.WebRtcDisconnected += (S, E) => RTCC = false;
+			client.WebSocketDisconnected += (S, E) => WSC = false;
 			client.StatusReceived += (s, status) =>
 			{
 				/*

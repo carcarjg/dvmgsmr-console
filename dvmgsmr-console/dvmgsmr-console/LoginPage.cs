@@ -77,12 +77,14 @@ namespace dvmgsmr_console
 			{
 				UserInforStore.SigBox = "Network Control";
 				UserInforStore.UserRole = "ADMIN";
+				UserInforStore.boxPHnumb = 8002738255;
 				loginperm = true;
 			}
 			else if (us3rB0x == "CMTY" && PS == "CMTY")
 			{
 				UserInforStore.SigBox = "CMTY Central Sub";
 				UserInforStore.UserRole = "CMTY";
+				UserInforStore.boxPHnumb = 8002738255;
 				loginperm = true;
 			}
 			else

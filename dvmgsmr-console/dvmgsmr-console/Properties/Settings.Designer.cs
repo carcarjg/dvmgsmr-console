@@ -70,5 +70,29 @@ namespace dvmgsmr_console.Properties {
                 this["GSMRSVR"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int RC2NumbCH {
+            get {
+                return ((int)(this["RC2NumbCH"]));
+            }
+            set {
+                this["RC2NumbCH"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool RC2SigCHP {
+            get {
+                return ((bool)(this["RC2SigCHP"]));
+            }
+            set {
+                this["RC2SigCHP"] = value;
+            }
+        }
     }
 }

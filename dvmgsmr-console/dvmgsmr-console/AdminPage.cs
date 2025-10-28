@@ -47,6 +47,28 @@ namespace dvmgsmr_console
 			}
 			svraddrTXT.Text = Properties.Settings.Default.RC2WSAddr;
 			svrportTXT.Text = Properties.Settings.Default.RC2WSPort;
+			switch (Properties.Settings.Default.RC2NumbCH)
+			{
+				case 1:
+					break;
+
+				case 2:
+					break;
+
+				case 3:
+					break;
+
+				case 4:
+					break;
+
+				case 5:
+					break;
+
+				default:
+					break;
+			}
+			if (Properties.Settings.Default.RC2SigCHP) { }
+			else { }
 		}
 
 		private void rc2BUT_Click(object sender, EventArgs e)
@@ -98,6 +120,75 @@ namespace dvmgsmr_console
 			else { MessageBox.Show("Please Enter Server Information"); }
 			this.Close();
 			Properties.Settings.Default.Save();
+		}
+
+		private void oskLaunchBUT_Click(object sender, EventArgs e)
+		{
+			System.Diagnostics.Process.Start("osk.exe");
+		}
+
+		private void yesnoBUT_Click(object sender, EventArgs e)
+		{
+			ButtonBeep();
+			if (sender.GetHashCode == yesBUT.GetHashCode)
+			{
+				yesBUT.BackColor = Color.Blue;
+				noBUT.BackColor = SystemColors.Control;
+			}
+			else
+			{
+				noBUT.BackColor = Color.Blue;
+				yesBUT.BackColor = SystemColors.Control;
+			}
+		}
+
+		private void chNumbBUT_Click(object sender, EventArgs e)
+		{
+			if (sender.GetHashCode == button1.GetHashCode)
+			{
+				button1.BackColor = Color.Blue;
+				button2.BackColor = SystemColors.Control;
+				button3.BackColor = SystemColors.Control;
+				button4.BackColor = SystemColors.Control;
+				button5.BackColor = SystemColors.Control;
+				Properties.Settings.Default.RC2NumbCH = 1;
+			}
+			else if (sender.GetHashCode == button2.GetHashCode)
+			{
+				button1.BackColor = SystemColors.Control;
+				button2.BackColor = Color.Blue;
+				button3.BackColor = SystemColors.Control;
+				button4.BackColor = SystemColors.Control;
+				button5.BackColor = SystemColors.Control;
+				Properties.Settings.Default.RC2NumbCH = 2;
+			}
+			else if (sender.GetHashCode == button3.GetHashCode)
+			{
+				button1.BackColor = SystemColors.Control;
+				button2.BackColor = SystemColors.Control;
+				button3.BackColor = Color.Blue;
+				button4.BackColor = SystemColors.Control;
+				button5.BackColor = SystemColors.Control;
+				Properties.Settings.Default.RC2NumbCH = 3;
+			}
+			else if (sender.GetHashCode == button4.GetHashCode)
+			{
+				button1.BackColor = SystemColors.Control;
+				button2.BackColor = SystemColors.Control;
+				button3.BackColor = SystemColors.Control;
+				button4.BackColor = Color.Blue;
+				button5.BackColor = SystemColors.Control;
+				Properties.Settings.Default.RC2NumbCH = 4;
+			}
+			else if (sender.GetHashCode == button5.GetHashCode)
+			{
+				button1.BackColor = SystemColors.Control;
+				button2.BackColor = SystemColors.Control;
+				button3.BackColor = SystemColors.Control;
+				button4.BackColor = SystemColors.Control;
+				button5.BackColor = Color.Blue;
+				Properties.Settings.Default.RC2NumbCH = 5;
+			}
 		}
 	}
 }

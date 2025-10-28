@@ -76,14 +76,17 @@
 			C3BUT = new Button();
 			C2BUT = new Button();
 			C1BUT = new Button();
+			BoxAndNumbErLAB = new Label();
+			tabPANEL = new Panel();
+			SpdDialTABBUT = new Button();
+			GrpCallTABBUt = new Button();
+			LogTabBUT = new Button();
+			TraingMobTABBUT = new Button();
 			IncomingTabBUT = new Button();
-			TraingMobBUT = new Button();
-			LogBUT = new Button();
-			GrpCallBUt = new Button();
-			SpdDialBUT = new Button();
 			((System.ComponentModel.ISupportInitialize)ACBicoPB).BeginInit();
 			((System.ComponentModel.ISupportInitialize)STATUSpicBOx).BeginInit();
 			IncomingPanel.SuspendLayout();
+			tabPANEL.SuspendLayout();
 			SuspendLayout();
 			// 
 			// daymonthyearLAB
@@ -678,6 +681,86 @@
 			C1BUT.TabIndex = 28;
 			C1BUT.UseVisualStyleBackColor = false;
 			// 
+			// BoxAndNumbErLAB
+			// 
+			BoxAndNumbErLAB.BackColor = SystemColors.ControlLight;
+			BoxAndNumbErLAB.Location = new Point(790, 40);
+			BoxAndNumbErLAB.Name = "BoxAndNumbErLAB";
+			BoxAndNumbErLAB.Size = new Size(431, 27);
+			BoxAndNumbErLAB.TabIndex = 49;
+			BoxAndNumbErLAB.TextAlign = ContentAlignment.MiddleRight;
+			// 
+			// tabPANEL
+			// 
+			tabPANEL.BackColor = SystemColors.ControlLight;
+			tabPANEL.BackgroundImage = Properties.Resources.IncomingSelTAB;
+			tabPANEL.BackgroundImageLayout = ImageLayout.Zoom;
+			tabPANEL.Controls.Add(SpdDialTABBUT);
+			tabPANEL.Controls.Add(GrpCallTABBUt);
+			tabPANEL.Controls.Add(LogTabBUT);
+			tabPANEL.Controls.Add(TraingMobTABBUT);
+			tabPANEL.Controls.Add(IncomingTabBUT);
+			tabPANEL.Location = new Point(14, 789);
+			tabPANEL.Name = "tabPANEL";
+			tabPANEL.Size = new Size(955, 79);
+			tabPANEL.TabIndex = 50;
+			// 
+			// SpdDialTABBUT
+			// 
+			SpdDialTABBUT.BackColor = Color.Transparent;
+			SpdDialTABBUT.FlatAppearance.BorderSize = 0;
+			SpdDialTABBUT.FlatAppearance.MouseDownBackColor = Color.Transparent;
+			SpdDialTABBUT.FlatAppearance.MouseOverBackColor = Color.Transparent;
+			SpdDialTABBUT.FlatStyle = FlatStyle.Flat;
+			SpdDialTABBUT.Location = new Point(143, 1);
+			SpdDialTABBUT.Name = "SpdDialTABBUT";
+			SpdDialTABBUT.Size = new Size(133, 77);
+			SpdDialTABBUT.TabIndex = 53;
+			SpdDialTABBUT.UseVisualStyleBackColor = false;
+			SpdDialTABBUT.Click += TabBut_Click;
+			// 
+			// GrpCallTABBUt
+			// 
+			GrpCallTABBUt.BackColor = Color.Transparent;
+			GrpCallTABBUt.FlatAppearance.BorderSize = 0;
+			GrpCallTABBUt.FlatAppearance.MouseDownBackColor = Color.Transparent;
+			GrpCallTABBUt.FlatAppearance.MouseOverBackColor = Color.Transparent;
+			GrpCallTABBUt.FlatStyle = FlatStyle.Flat;
+			GrpCallTABBUt.Location = new Point(4, 1);
+			GrpCallTABBUt.Name = "GrpCallTABBUt";
+			GrpCallTABBUt.Size = new Size(135, 77);
+			GrpCallTABBUt.TabIndex = 52;
+			GrpCallTABBUt.UseVisualStyleBackColor = false;
+			GrpCallTABBUt.Click += TabBut_Click;
+			// 
+			// LogTabBUT
+			// 
+			LogTabBUT.BackColor = Color.Transparent;
+			LogTabBUT.FlatAppearance.BorderSize = 0;
+			LogTabBUT.FlatAppearance.MouseDownBackColor = Color.Transparent;
+			LogTabBUT.FlatAppearance.MouseOverBackColor = Color.Transparent;
+			LogTabBUT.FlatStyle = FlatStyle.Flat;
+			LogTabBUT.Location = new Point(548, 0);
+			LogTabBUT.Name = "LogTabBUT";
+			LogTabBUT.Size = new Size(131, 77);
+			LogTabBUT.TabIndex = 51;
+			LogTabBUT.UseVisualStyleBackColor = false;
+			LogTabBUT.Click += TabBut_Click;
+			// 
+			// TraingMobTABBUT
+			// 
+			TraingMobTABBUT.BackColor = Color.Transparent;
+			TraingMobTABBUT.FlatAppearance.BorderSize = 0;
+			TraingMobTABBUT.FlatAppearance.MouseDownBackColor = Color.Transparent;
+			TraingMobTABBUT.FlatAppearance.MouseOverBackColor = Color.Transparent;
+			TraingMobTABBUT.FlatStyle = FlatStyle.Flat;
+			TraingMobTABBUT.Location = new Point(680, 0);
+			TraingMobTABBUT.Name = "TraingMobTABBUT";
+			TraingMobTABBUT.Size = new Size(134, 77);
+			TraingMobTABBUT.TabIndex = 50;
+			TraingMobTABBUT.UseVisualStyleBackColor = false;
+			TraingMobTABBUT.Click += TabBut_Click;
+			// 
 			// IncomingTabBUT
 			// 
 			IncomingTabBUT.BackColor = Color.Transparent;
@@ -685,68 +768,12 @@
 			IncomingTabBUT.FlatAppearance.MouseDownBackColor = Color.Transparent;
 			IncomingTabBUT.FlatAppearance.MouseOverBackColor = Color.Transparent;
 			IncomingTabBUT.FlatStyle = FlatStyle.Flat;
-			IncomingTabBUT.Location = new Point(835, 787);
+			IncomingTabBUT.Location = new Point(816, 0);
 			IncomingTabBUT.Name = "IncomingTabBUT";
 			IncomingTabBUT.Size = new Size(134, 77);
-			IncomingTabBUT.TabIndex = 44;
+			IncomingTabBUT.TabIndex = 49;
 			IncomingTabBUT.UseVisualStyleBackColor = false;
 			IncomingTabBUT.Click += TabBut_Click;
-			// 
-			// TraingMobBUT
-			// 
-			TraingMobBUT.BackColor = Color.Transparent;
-			TraingMobBUT.FlatAppearance.BorderSize = 0;
-			TraingMobBUT.FlatAppearance.MouseDownBackColor = Color.Transparent;
-			TraingMobBUT.FlatAppearance.MouseOverBackColor = Color.Transparent;
-			TraingMobBUT.FlatStyle = FlatStyle.Flat;
-			TraingMobBUT.Location = new Point(699, 787);
-			TraingMobBUT.Name = "TraingMobBUT";
-			TraingMobBUT.Size = new Size(134, 77);
-			TraingMobBUT.TabIndex = 45;
-			TraingMobBUT.UseVisualStyleBackColor = false;
-			TraingMobBUT.Click += TabBut_Click;
-			// 
-			// LogBUT
-			// 
-			LogBUT.BackColor = Color.Transparent;
-			LogBUT.FlatAppearance.BorderSize = 0;
-			LogBUT.FlatAppearance.MouseDownBackColor = Color.Transparent;
-			LogBUT.FlatAppearance.MouseOverBackColor = Color.Transparent;
-			LogBUT.FlatStyle = FlatStyle.Flat;
-			LogBUT.Location = new Point(562, 787);
-			LogBUT.Name = "LogBUT";
-			LogBUT.Size = new Size(134, 77);
-			LogBUT.TabIndex = 46;
-			LogBUT.UseVisualStyleBackColor = false;
-			LogBUT.Click += TabBut_Click;
-			// 
-			// GrpCallBUt
-			// 
-			GrpCallBUt.BackColor = Color.Transparent;
-			GrpCallBUt.FlatAppearance.BorderSize = 0;
-			GrpCallBUt.FlatAppearance.MouseDownBackColor = Color.Transparent;
-			GrpCallBUt.FlatAppearance.MouseOverBackColor = Color.Transparent;
-			GrpCallBUt.FlatStyle = FlatStyle.Flat;
-			GrpCallBUt.Location = new Point(14, 788);
-			GrpCallBUt.Name = "GrpCallBUt";
-			GrpCallBUt.Size = new Size(134, 77);
-			GrpCallBUt.TabIndex = 47;
-			GrpCallBUt.UseVisualStyleBackColor = false;
-			GrpCallBUt.Click += TabBut_Click;
-			// 
-			// SpdDialBUT
-			// 
-			SpdDialBUT.BackColor = Color.Transparent;
-			SpdDialBUT.FlatAppearance.BorderSize = 0;
-			SpdDialBUT.FlatAppearance.MouseDownBackColor = Color.Transparent;
-			SpdDialBUT.FlatAppearance.MouseOverBackColor = Color.Transparent;
-			SpdDialBUT.FlatStyle = FlatStyle.Flat;
-			SpdDialBUT.Location = new Point(151, 788);
-			SpdDialBUT.Name = "SpdDialBUT";
-			SpdDialBUT.Size = new Size(134, 77);
-			SpdDialBUT.TabIndex = 48;
-			SpdDialBUT.UseVisualStyleBackColor = false;
-			SpdDialBUT.Click += TabBut_Click;
 			// 
 			// RadSch
 			// 
@@ -754,11 +781,8 @@
 			AutoScaleMode = AutoScaleMode.Font;
 			BackgroundImage = Properties.Resources.IncomFullBG;
 			ClientSize = new Size(1233, 986);
-			Controls.Add(SpdDialBUT);
-			Controls.Add(GrpCallBUt);
-			Controls.Add(LogBUT);
-			Controls.Add(TraingMobBUT);
-			Controls.Add(IncomingTabBUT);
+			Controls.Add(tabPANEL);
+			Controls.Add(BoxAndNumbErLAB);
 			Controls.Add(IncomingPanel);
 			Controls.Add(button9);
 			Controls.Add(button8);
@@ -787,6 +811,7 @@
 			((System.ComponentModel.ISupportInitialize)STATUSpicBOx).EndInit();
 			IncomingPanel.ResumeLayout(false);
 			IncomingPanel.PerformLayout();
+			tabPANEL.ResumeLayout(false);
 			ResumeLayout(false);
 			PerformLayout();
 		}
@@ -840,10 +865,12 @@
 		private Button C3BUT;
 		private Button C2BUT;
 		private Button C1BUT;
+		private Label BoxAndNumbErLAB;
+		private Panel tabPANEL;
+		private Button SpdDialTABBUT;
+		private Button GrpCallTABBUt;
+		private Button LogTabBUT;
+		private Button TraingMobTABBUT;
 		private Button IncomingTabBUT;
-		private Button TraingMobBUT;
-		private Button LogBUT;
-		private Button GrpCallBUt;
-		private Button SpdDialBUT;
 	}
 }

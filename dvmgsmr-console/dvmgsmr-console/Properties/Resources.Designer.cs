@@ -103,6 +103,16 @@ namespace dvmgsmr_console.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap GroupSelTAB {
+            get {
+                object obj = ResourceManager.GetObject("GroupSelTAB", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap IncomBackground {
             get {
                 object obj = ResourceManager.GetObject("IncomBackground", resourceCulture);
@@ -116,6 +126,46 @@ namespace dvmgsmr_console.Properties {
         internal static System.Drawing.Bitmap IncomFullBG {
             get {
                 object obj = ResourceManager.GetObject("IncomFullBG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IncomingSelTAB {
+            get {
+                object obj = ResourceManager.GetObject("IncomingSelTAB", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LogSelTAB {
+            get {
+                object obj = ResourceManager.GetObject("LogSelTAB", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SPDDialSelTAB {
+            get {
+                object obj = ResourceManager.GetObject("SPDDialSelTAB", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TrainMOBSelTAB {
+            get {
+                object obj = ResourceManager.GetObject("TrainMOBSelTAB", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -28,5 +28,7 @@ namespace dvmgsmr_console
 		internal static string UserRole;
 
 		internal static string SigBox;
+
+		internal static long boxPHnumb;
 	}
 }

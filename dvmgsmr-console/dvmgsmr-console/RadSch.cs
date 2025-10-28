@@ -37,7 +37,18 @@ namespace dvmgsmr_console
 
 		internal static string[] acallsTG = new string[4];
 
+		internal static int selCallID;
+
 		private static readonly CancellationTokenSource cts = new CancellationTokenSource();
+
+		/// <summary>
+		/// Tab 5 = Incoming (Default)
+		/// Tab 4 = Trains Mobiles
+		/// Tab 3 = Log
+		/// Tab 2 = Speed Dial
+		/// Tab 1 = Group Call
+		/// </summary>
+		internal int currenttab = 5;
 
 		public RadSch()
 		{
@@ -51,6 +62,33 @@ namespace dvmgsmr_console
 			string DTMY = DateTime.Now.Year.ToString();
 			daymonthyearLAB.Text = DTMD + " " + DTMM + " " + DTMY;
 			RoleLab.Text = UserInforStore.SigBox;
+			BoxAndNumbErLAB.Text = UserInforStore.SigBox + " (" + UserInforStore.boxPHnumb + ")";
+			switch (currenttab)
+			{
+				case 5:
+					IncomingPanel.Visible = true;
+					break;
+
+				case 4:
+					IncomingPanel.Visible = false;
+					break;
+
+				case 3:
+					IncomingPanel.Visible = false;
+					break;
+
+				case 2:
+					IncomingPanel.Visible = false;
+					break;
+
+				case 1:
+					IncomingPanel.Visible = false;
+					break;
+
+				default:
+					IncomingPanel.Visible = false;
+					break;
+			}
 			if (Properties.Settings.Default.ConnMODE == "RC2")
 			{
 				RC2Con();
@@ -602,6 +640,59 @@ namespace dvmgsmr_console
 		}
 
 		private void TabBut_Click(object sender, EventArgs e)
-		{ }
+		{
+			ButtonBeep();
+			if (sender.GetHashCode() == IncomingTabBUT.GetHashCode())
+			{
+				currenttab = 5;
+				tabPANEL.BackgroundImage = Resources.IncomingSelTAB;
+			}
+			else if (sender.GetHashCode() == TraingMobTABBUT.GetHashCode())
+			{
+				currenttab = 4;
+				tabPANEL.BackgroundImage = Resources.TrainMOBSelTAB;
+			}
+			else if (sender.GetHashCode() == LogTabBUT.GetHashCode())
+			{
+				currenttab = 3;
+				tabPANEL.BackgroundImage = Resources.LogSelTAB;
+			}
+			else if (sender.GetHashCode() == SpdDialTABBUT.GetHashCode())
+			{
+				currenttab = 2;
+				tabPANEL.BackgroundImage = Resources.SPDDialSelTAB;
+			}
+			else if (sender.GetHashCode() == GrpCallTABBUt.GetHashCode())
+			{
+				currenttab = 1;
+				tabPANEL.BackgroundImage = Resources.GroupSelTAB;
+			}
+			switch (currenttab)
+			{
+				case 5:
+					IncomingPanel.Visible = true;
+					break;
+
+				case 4:
+					IncomingPanel.Visible = false;
+					break;
+
+				case 3:
+					IncomingPanel.Visible = false;
+					break;
+
+				case 2:
+					IncomingPanel.Visible = false;
+					break;
+
+				case 1:
+					IncomingPanel.Visible = false;
+					break;
+			}
+		}
+
+		private void CallBut_Click(object sender, EventArgs e)
+		{
+		}
 	}
 }
