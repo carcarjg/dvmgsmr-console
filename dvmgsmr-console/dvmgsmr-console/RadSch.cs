@@ -84,26 +84,47 @@ namespace dvmgsmr_console
 			{
 				case 5:
 					IncomingPanel.Visible = true;
+					IncomingTabBUT.ForeColor = Color.FromArgb(6, 158, 230);
+					GrpCallTABBUt.ForeColor = Color.Black;
+					SpdDialTABBUT.ForeColor = Color.Black;
+					LogTabBUT.ForeColor = Color.Black;
+					TraingMobTABBUT.ForeColor = Color.Black;
 					break;
 
 				case 4:
 					IncomingPanel.Visible = false;
+					IncomingTabBUT.ForeColor = Color.Black;
+					GrpCallTABBUt.ForeColor = Color.Black;
+					SpdDialTABBUT.ForeColor = Color.Black;
+					LogTabBUT.ForeColor = Color.Black;
+					TraingMobTABBUT.ForeColor = Color.FromArgb(6, 158, 230);
 					break;
 
 				case 3:
 					IncomingPanel.Visible = false;
+					IncomingTabBUT.ForeColor = Color.Black;
+					GrpCallTABBUt.ForeColor = Color.Black;
+					SpdDialTABBUT.ForeColor = Color.Black;
+					LogTabBUT.ForeColor = Color.FromArgb(6, 158, 230);
+					TraingMobTABBUT.ForeColor = Color.Black;
 					break;
 
 				case 2:
 					IncomingPanel.Visible = false;
+					IncomingTabBUT.ForeColor = Color.Black;
+					GrpCallTABBUt.ForeColor = Color.Black;
+					SpdDialTABBUT.ForeColor = Color.FromArgb(6, 158, 230);
+					LogTabBUT.ForeColor = Color.Black;
+					TraingMobTABBUT.ForeColor = Color.Black;
 					break;
 
 				case 1:
 					IncomingPanel.Visible = false;
-					break;
-
-				default:
-					IncomingPanel.Visible = false;
+					IncomingTabBUT.ForeColor = Color.Black;
+					GrpCallTABBUt.ForeColor = Color.FromArgb(6, 158, 230);
+					SpdDialTABBUT.ForeColor = Color.Black;
+					LogTabBUT.ForeColor = Color.Black;
+					TraingMobTABBUT.ForeColor = Color.Black;
 					break;
 			}
 			if (Properties.Settings.Default.ConnMODE == "RC2")
@@ -468,6 +489,14 @@ namespace dvmgsmr_console
 					break;
 			}
 			ringACB(rid, TGNAME);
+			int callnumb;
+			if (activecall == true)
+			{
+				callnumb = Pending_CallsRID.Count + 1;
+			}
+			else if (Pending_CallsRID.Count == 0 && activecall == true) { callnumb = 2; }
+			else { callnumb = 1; }
+			IncomingTabBUT.Text = "Incoming (" + callnumb + ")";
 			callcreateinprog = false;
 			return availslot;
 		}
@@ -543,6 +572,15 @@ namespace dvmgsmr_console
 					C5lab2.Visible = false;
 					break;
 			}
+			int callnumb;
+			if (activecall == true)
+			{
+				callnumb = Pending_CallsRID.Count + 1;
+			}
+			else if (Pending_CallsRID.Count == 0 && activecall == true) { callnumb = 2; }
+			else { callnumb = 1; }
+			callnumb = callnumb - 1;
+			if (callnumb != 0) { IncomingTabBUT.Text = "Incoming (" + callnumb + ")"; } else { IncomingTabBUT.Text = "Incoming"; }
 		}
 
 		private static bool callcreateinprog = false;
@@ -667,6 +705,7 @@ namespace dvmgsmr_console
 							callspending = true;
 
 							///You Left off here
+							///Update: I forgot what I left off doing
 						}
 					}
 					checkedcall = 0;
@@ -853,40 +892,7 @@ namespace dvmgsmr_console
 				}
 			}
 			else { Connections.CID5 = "0"; }
-			/*
 
-			//Old Stuff
-			if (Connections.RXC == true && Connections.CID != "0" && Connections.CID != "" && Connections.CCH != "")
-			{
-				int checkedcall = CheckForCallTG(Connections.CCH);
-				if (checkedcall != 99)
-				{
-					if (acallsHC[checkedcall] == Connections.CID)
-					{
-						//Do nothing
-					}
-					else
-					{
-						UpdateCall(checkedcall, Connections.CID, Connections.CCH);
-					}
-				}
-				else
-				{
-					if (callcreateinprog != true)
-					{
-						callcreateinprog = true;
-						calltype = "TRAIN";
-						AddNewCall(int.Parse(Connections.CID), Connections.CCH);
-					}
-				}
-				checkedcall = 0;
-			}
-			else if (Connections.RXC == false)
-			{
-				Connections.CID = "0";
-				Connections.CCH = "";
-			}
-			*/
 			if (fireonce == false)
 			{
 				do { Thread.Sleep(1); } while (Connections.CCH1 == "");
@@ -1090,22 +1096,47 @@ namespace dvmgsmr_console
 			{
 				case 5:
 					IncomingPanel.Visible = true;
+					IncomingTabBUT.ForeColor = Color.FromArgb(6, 158, 230);
+					GrpCallTABBUt.ForeColor = Color.Black;
+					SpdDialTABBUT.ForeColor = Color.Black;
+					LogTabBUT.ForeColor = Color.Black;
+					TraingMobTABBUT.ForeColor = Color.Black;
 					break;
 
 				case 4:
 					IncomingPanel.Visible = false;
+					IncomingTabBUT.ForeColor = Color.Black;
+					GrpCallTABBUt.ForeColor = Color.Black;
+					SpdDialTABBUT.ForeColor = Color.Black;
+					LogTabBUT.ForeColor = Color.Black;
+					TraingMobTABBUT.ForeColor = Color.FromArgb(6, 158, 230);
 					break;
 
 				case 3:
 					IncomingPanel.Visible = false;
+					IncomingTabBUT.ForeColor = Color.Black;
+					GrpCallTABBUt.ForeColor = Color.Black;
+					SpdDialTABBUT.ForeColor = Color.Black;
+					LogTabBUT.ForeColor = Color.FromArgb(6, 158, 230);
+					TraingMobTABBUT.ForeColor = Color.Black;
 					break;
 
 				case 2:
 					IncomingPanel.Visible = false;
+					IncomingTabBUT.ForeColor = Color.Black;
+					GrpCallTABBUt.ForeColor = Color.Black;
+					SpdDialTABBUT.ForeColor = Color.FromArgb(6, 158, 230);
+					LogTabBUT.ForeColor = Color.Black;
+					TraingMobTABBUT.ForeColor = Color.Black;
 					break;
 
 				case 1:
 					IncomingPanel.Visible = false;
+					IncomingTabBUT.ForeColor = Color.Black;
+					GrpCallTABBUt.ForeColor = Color.FromArgb(6, 158, 230);
+					SpdDialTABBUT.ForeColor = Color.Black;
+					LogTabBUT.ForeColor = Color.Black;
+					TraingMobTABBUT.ForeColor = Color.Black;
 					break;
 			}
 		}
@@ -1120,6 +1151,20 @@ namespace dvmgsmr_console
 			ButtonBeep();
 			SettingsForm SF = new SettingsForm();
 			SF.ShowDialog();
+		}
+
+		internal void NewTxTMsg(int pri, string from, string subject, string Message)
+		{ }
+
+		private void timer2_Tick(object sender, EventArgs e)
+		{
+			DateTime M = DateTime.Now;
+			string MSTR = M.ToString("HH:MM:ss");
+			timelab.Text = MSTR;
+		}
+
+		private void TXTstripBUT_Click(object sender, EventArgs e)
+		{
 		}
 	}
 }

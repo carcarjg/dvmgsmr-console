@@ -41,7 +41,7 @@
 			STATUSpicBOx = new PictureBox();
 			STATUSlab = new Label();
 			RoleLab = new Label();
-			button1 = new Button();
+			TXTstripBUT = new Button();
 			button2 = new Button();
 			button3 = new Button();
 			button4 = new Button();
@@ -51,6 +51,15 @@
 			button8 = new Button();
 			button9 = new Button();
 			IncomingPanel = new Panel();
+			TR3PB1 = new PictureBox();
+			TR3LAB2 = new Label();
+			TR3LAB1 = new Label();
+			TR2PB1 = new PictureBox();
+			TR2LAB2 = new Label();
+			TR2LAB1 = new Label();
+			TR1PB1 = new PictureBox();
+			TR1LAB2 = new Label();
+			TR1LAB1 = new Label();
 			C5lab2 = new Label();
 			C5lab1 = new Label();
 			C4lab2 = new Label();
@@ -78,14 +87,21 @@
 			C1BUT = new Button();
 			BoxAndNumbErLAB = new Label();
 			tabPANEL = new Panel();
+			button7 = new Button();
+			button6 = new Button();
 			SpdDialTABBUT = new Button();
 			GrpCallTABBUt = new Button();
 			LogTabBUT = new Button();
 			TraingMobTABBUT = new Button();
 			IncomingTabBUT = new Button();
+			timelab = new Label();
+			timer2 = new System.Windows.Forms.Timer(components);
 			((System.ComponentModel.ISupportInitialize)ACBicoPB).BeginInit();
 			((System.ComponentModel.ISupportInitialize)STATUSpicBOx).BeginInit();
 			IncomingPanel.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)TR3PB1).BeginInit();
+			((System.ComponentModel.ISupportInitialize)TR2PB1).BeginInit();
+			((System.ComponentModel.ISupportInitialize)TR1PB1).BeginInit();
 			tabPANEL.SuspendLayout();
 			SuspendLayout();
 			// 
@@ -186,7 +202,7 @@
 			ACBicoPB.BackgroundImageLayout = ImageLayout.Zoom;
 			ACBicoPB.Image = Properties.Resources._9_96528_best_free_train_png_icon_train_icon__1_;
 			ACBicoPB.InitialImage = null;
-			ACBicoPB.Location = new Point(1002, 851);
+			ACBicoPB.Location = new Point(1006, 851);
 			ACBicoPB.Name = "ACBicoPB";
 			ACBicoPB.Size = new Size(37, 31);
 			ACBicoPB.TabIndex = 30;
@@ -227,19 +243,19 @@
 			RoleLab.Text = "label1";
 			RoleLab.TextAlign = ContentAlignment.MiddleCenter;
 			// 
-			// button1
+			// TXTstripBUT
 			// 
-			button1.BackColor = Color.Transparent;
-			button1.Enabled = false;
-			button1.FlatAppearance.MouseDownBackColor = Color.Transparent;
-			button1.FlatAppearance.MouseOverBackColor = Color.Transparent;
-			button1.FlatStyle = FlatStyle.Flat;
-			button1.Location = new Point(877, 883);
-			button1.Name = "button1";
-			button1.Size = new Size(89, 91);
-			button1.TabIndex = 34;
-			button1.Text = "button1";
-			button1.UseVisualStyleBackColor = false;
+			TXTstripBUT.BackColor = Color.Transparent;
+			TXTstripBUT.Enabled = false;
+			TXTstripBUT.FlatAppearance.MouseDownBackColor = Color.Transparent;
+			TXTstripBUT.FlatAppearance.MouseOverBackColor = Color.Transparent;
+			TXTstripBUT.FlatStyle = FlatStyle.Flat;
+			TXTstripBUT.Location = new Point(877, 883);
+			TXTstripBUT.Name = "TXTstripBUT";
+			TXTstripBUT.Size = new Size(89, 91);
+			TXTstripBUT.TabIndex = 34;
+			TXTstripBUT.UseVisualStyleBackColor = false;
+			TXTstripBUT.Click += TXTstripBUT_Click;
 			// 
 			// button2
 			// 
@@ -357,6 +373,15 @@
 			IncomingPanel.BackColor = Color.Transparent;
 			IncomingPanel.BackgroundImage = Properties.Resources.IncomBackground;
 			IncomingPanel.BackgroundImageLayout = ImageLayout.Zoom;
+			IncomingPanel.Controls.Add(TR3PB1);
+			IncomingPanel.Controls.Add(TR3LAB2);
+			IncomingPanel.Controls.Add(TR3LAB1);
+			IncomingPanel.Controls.Add(TR2PB1);
+			IncomingPanel.Controls.Add(TR2LAB2);
+			IncomingPanel.Controls.Add(TR2LAB1);
+			IncomingPanel.Controls.Add(TR1PB1);
+			IncomingPanel.Controls.Add(TR1LAB2);
+			IncomingPanel.Controls.Add(TR1LAB1);
 			IncomingPanel.Controls.Add(C5lab2);
 			IncomingPanel.Controls.Add(C5lab1);
 			IncomingPanel.Controls.Add(C4lab2);
@@ -386,6 +411,108 @@
 			IncomingPanel.Name = "IncomingPanel";
 			IncomingPanel.Size = new Size(1207, 716);
 			IncomingPanel.TabIndex = 43;
+			// 
+			// TR3PB1
+			// 
+			TR3PB1.Location = new Point(85, 407);
+			TR3PB1.Name = "TR3PB1";
+			TR3PB1.Size = new Size(45, 40);
+			TR3PB1.TabIndex = 61;
+			TR3PB1.TabStop = false;
+			// 
+			// TR3LAB2
+			// 
+			TR3LAB2.AutoSize = true;
+			TR3LAB2.BackColor = Color.White;
+			TR3LAB2.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+			TR3LAB2.Location = new Point(395, 411);
+			TR3LAB2.Name = "TR3LAB2";
+			TR3LAB2.Size = new Size(83, 32);
+			TR3LAB2.TabIndex = 60;
+			TR3LAB2.Text = "label2";
+			TR3LAB2.TextAlign = ContentAlignment.MiddleLeft;
+			TR3LAB2.Visible = false;
+			// 
+			// TR3LAB1
+			// 
+			TR3LAB1.AutoSize = true;
+			TR3LAB1.BackColor = Color.White;
+			TR3LAB1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+			TR3LAB1.Location = new Point(142, 411);
+			TR3LAB1.Name = "TR3LAB1";
+			TR3LAB1.Size = new Size(83, 32);
+			TR3LAB1.TabIndex = 59;
+			TR3LAB1.Text = "label1";
+			TR3LAB1.TextAlign = ContentAlignment.MiddleLeft;
+			TR3LAB1.Visible = false;
+			// 
+			// TR2PB1
+			// 
+			TR2PB1.Location = new Point(85, 357);
+			TR2PB1.Name = "TR2PB1";
+			TR2PB1.Size = new Size(45, 40);
+			TR2PB1.TabIndex = 58;
+			TR2PB1.TabStop = false;
+			// 
+			// TR2LAB2
+			// 
+			TR2LAB2.AutoSize = true;
+			TR2LAB2.BackColor = Color.White;
+			TR2LAB2.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+			TR2LAB2.Location = new Point(395, 361);
+			TR2LAB2.Name = "TR2LAB2";
+			TR2LAB2.Size = new Size(83, 32);
+			TR2LAB2.TabIndex = 57;
+			TR2LAB2.Text = "label2";
+			TR2LAB2.TextAlign = ContentAlignment.MiddleLeft;
+			TR2LAB2.Visible = false;
+			// 
+			// TR2LAB1
+			// 
+			TR2LAB1.AutoSize = true;
+			TR2LAB1.BackColor = Color.White;
+			TR2LAB1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+			TR2LAB1.Location = new Point(142, 361);
+			TR2LAB1.Name = "TR2LAB1";
+			TR2LAB1.Size = new Size(83, 32);
+			TR2LAB1.TabIndex = 56;
+			TR2LAB1.Text = "label1";
+			TR2LAB1.TextAlign = ContentAlignment.MiddleLeft;
+			TR2LAB1.Visible = false;
+			// 
+			// TR1PB1
+			// 
+			TR1PB1.Location = new Point(85, 311);
+			TR1PB1.Name = "TR1PB1";
+			TR1PB1.Size = new Size(45, 40);
+			TR1PB1.TabIndex = 55;
+			TR1PB1.TabStop = false;
+			// 
+			// TR1LAB2
+			// 
+			TR1LAB2.AutoSize = true;
+			TR1LAB2.BackColor = Color.White;
+			TR1LAB2.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+			TR1LAB2.Location = new Point(395, 315);
+			TR1LAB2.Name = "TR1LAB2";
+			TR1LAB2.Size = new Size(83, 32);
+			TR1LAB2.TabIndex = 54;
+			TR1LAB2.Text = "label2";
+			TR1LAB2.TextAlign = ContentAlignment.MiddleLeft;
+			TR1LAB2.Visible = false;
+			// 
+			// TR1LAB1
+			// 
+			TR1LAB1.AutoSize = true;
+			TR1LAB1.BackColor = Color.White;
+			TR1LAB1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+			TR1LAB1.Location = new Point(142, 315);
+			TR1LAB1.Name = "TR1LAB1";
+			TR1LAB1.Size = new Size(83, 32);
+			TR1LAB1.TabIndex = 53;
+			TR1LAB1.Text = "label1";
+			TR1LAB1.TextAlign = ContentAlignment.MiddleLeft;
+			TR1LAB1.Visible = false;
 			// 
 			// C5lab2
 			// 
@@ -694,8 +821,9 @@
 			// tabPANEL
 			// 
 			tabPANEL.BackColor = SystemColors.ControlLight;
-			tabPANEL.BackgroundImage = Properties.Resources.IncomingSelTAB;
 			tabPANEL.BackgroundImageLayout = ImageLayout.Zoom;
+			tabPANEL.Controls.Add(button7);
+			tabPANEL.Controls.Add(button6);
 			tabPANEL.Controls.Add(SpdDialTABBUT);
 			tabPANEL.Controls.Add(GrpCallTABBUt);
 			tabPANEL.Controls.Add(LogTabBUT);
@@ -706,75 +834,134 @@
 			tabPANEL.Size = new Size(955, 79);
 			tabPANEL.TabIndex = 50;
 			// 
+			// button7
+			// 
+			button7.BackColor = SystemColors.ControlLight;
+			button7.Enabled = false;
+			button7.FlatAppearance.BorderColor = SystemColors.ControlDarkDark;
+			button7.FlatAppearance.MouseDownBackColor = SystemColors.ControlLight;
+			button7.FlatAppearance.MouseOverBackColor = SystemColors.ControlLight;
+			button7.FlatStyle = FlatStyle.Flat;
+			button7.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			button7.Location = new Point(275, 0);
+			button7.Name = "button7";
+			button7.Size = new Size(135, 79);
+			button7.TabIndex = 55;
+			button7.UseVisualStyleBackColor = false;
+			// 
+			// button6
+			// 
+			button6.BackColor = SystemColors.ControlLight;
+			button6.Enabled = false;
+			button6.FlatAppearance.BorderColor = SystemColors.ControlDarkDark;
+			button6.FlatAppearance.MouseDownBackColor = SystemColors.ControlLight;
+			button6.FlatAppearance.MouseOverBackColor = SystemColors.ControlLight;
+			button6.FlatStyle = FlatStyle.Flat;
+			button6.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			button6.Location = new Point(409, 0);
+			button6.Name = "button6";
+			button6.Size = new Size(136, 79);
+			button6.TabIndex = 54;
+			button6.UseVisualStyleBackColor = false;
+			// 
 			// SpdDialTABBUT
 			// 
-			SpdDialTABBUT.BackColor = Color.Transparent;
-			SpdDialTABBUT.FlatAppearance.BorderSize = 0;
-			SpdDialTABBUT.FlatAppearance.MouseDownBackColor = Color.Transparent;
-			SpdDialTABBUT.FlatAppearance.MouseOverBackColor = Color.Transparent;
+			SpdDialTABBUT.BackColor = SystemColors.ControlLight;
+			SpdDialTABBUT.FlatAppearance.BorderColor = SystemColors.ControlDarkDark;
+			SpdDialTABBUT.FlatAppearance.MouseDownBackColor = SystemColors.ControlLight;
+			SpdDialTABBUT.FlatAppearance.MouseOverBackColor = SystemColors.ControlLight;
 			SpdDialTABBUT.FlatStyle = FlatStyle.Flat;
-			SpdDialTABBUT.Location = new Point(143, 1);
+			SpdDialTABBUT.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			SpdDialTABBUT.Location = new Point(142, 1);
 			SpdDialTABBUT.Name = "SpdDialTABBUT";
 			SpdDialTABBUT.Size = new Size(133, 77);
 			SpdDialTABBUT.TabIndex = 53;
+			SpdDialTABBUT.Text = "Speed Dial";
 			SpdDialTABBUT.UseVisualStyleBackColor = false;
 			SpdDialTABBUT.Click += TabBut_Click;
 			// 
 			// GrpCallTABBUt
 			// 
-			GrpCallTABBUt.BackColor = Color.Transparent;
-			GrpCallTABBUt.FlatAppearance.BorderSize = 0;
-			GrpCallTABBUt.FlatAppearance.MouseDownBackColor = Color.Transparent;
-			GrpCallTABBUt.FlatAppearance.MouseOverBackColor = Color.Transparent;
+			GrpCallTABBUt.BackColor = SystemColors.ControlLight;
+			GrpCallTABBUt.FlatAppearance.BorderColor = SystemColors.ControlDarkDark;
+			GrpCallTABBUt.FlatAppearance.MouseDownBackColor = SystemColors.ControlLight;
+			GrpCallTABBUt.FlatAppearance.MouseOverBackColor = SystemColors.ControlLight;
 			GrpCallTABBUt.FlatStyle = FlatStyle.Flat;
-			GrpCallTABBUt.Location = new Point(4, 1);
+			GrpCallTABBUt.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+			GrpCallTABBUt.Location = new Point(2, 1);
 			GrpCallTABBUt.Name = "GrpCallTABBUt";
-			GrpCallTABBUt.Size = new Size(135, 77);
+			GrpCallTABBUt.Size = new Size(141, 77);
 			GrpCallTABBUt.TabIndex = 52;
+			GrpCallTABBUt.Text = "Group Call";
 			GrpCallTABBUt.UseVisualStyleBackColor = false;
 			GrpCallTABBUt.Click += TabBut_Click;
 			// 
 			// LogTabBUT
 			// 
-			LogTabBUT.BackColor = Color.Transparent;
-			LogTabBUT.FlatAppearance.BorderSize = 0;
-			LogTabBUT.FlatAppearance.MouseDownBackColor = Color.Transparent;
-			LogTabBUT.FlatAppearance.MouseOverBackColor = Color.Transparent;
+			LogTabBUT.BackColor = SystemColors.ControlLight;
+			LogTabBUT.FlatAppearance.BorderColor = SystemColors.ControlDarkDark;
+			LogTabBUT.FlatAppearance.MouseDownBackColor = SystemColors.ControlLight;
+			LogTabBUT.FlatAppearance.MouseOverBackColor = SystemColors.ControlLight;
 			LogTabBUT.FlatStyle = FlatStyle.Flat;
-			LogTabBUT.Location = new Point(548, 0);
+			LogTabBUT.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			LogTabBUT.Location = new Point(543, 0);
 			LogTabBUT.Name = "LogTabBUT";
-			LogTabBUT.Size = new Size(131, 77);
+			LogTabBUT.Size = new Size(136, 79);
 			LogTabBUT.TabIndex = 51;
+			LogTabBUT.Text = "Log";
 			LogTabBUT.UseVisualStyleBackColor = false;
 			LogTabBUT.Click += TabBut_Click;
 			// 
 			// TraingMobTABBUT
 			// 
-			TraingMobTABBUT.BackColor = Color.Transparent;
-			TraingMobTABBUT.FlatAppearance.BorderSize = 0;
-			TraingMobTABBUT.FlatAppearance.MouseDownBackColor = Color.Transparent;
-			TraingMobTABBUT.FlatAppearance.MouseOverBackColor = Color.Transparent;
+			TraingMobTABBUT.AutoEllipsis = true;
+			TraingMobTABBUT.BackColor = SystemColors.ControlLight;
+			TraingMobTABBUT.FlatAppearance.BorderColor = SystemColors.ControlDarkDark;
+			TraingMobTABBUT.FlatAppearance.MouseDownBackColor = Color.LightGray;
+			TraingMobTABBUT.FlatAppearance.MouseOverBackColor = Color.LightGray;
 			TraingMobTABBUT.FlatStyle = FlatStyle.Flat;
-			TraingMobTABBUT.Location = new Point(680, 0);
+			TraingMobTABBUT.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+			TraingMobTABBUT.Location = new Point(676, 0);
 			TraingMobTABBUT.Name = "TraingMobTABBUT";
-			TraingMobTABBUT.Size = new Size(134, 77);
+			TraingMobTABBUT.Size = new Size(136, 79);
 			TraingMobTABBUT.TabIndex = 50;
+			TraingMobTABBUT.Text = "Trains Mobiles";
 			TraingMobTABBUT.UseVisualStyleBackColor = false;
 			TraingMobTABBUT.Click += TabBut_Click;
 			// 
 			// IncomingTabBUT
 			// 
-			IncomingTabBUT.BackColor = Color.Transparent;
-			IncomingTabBUT.FlatAppearance.BorderSize = 0;
-			IncomingTabBUT.FlatAppearance.MouseDownBackColor = Color.Transparent;
-			IncomingTabBUT.FlatAppearance.MouseOverBackColor = Color.Transparent;
+			IncomingTabBUT.AutoEllipsis = true;
+			IncomingTabBUT.BackColor = SystemColors.ControlLight;
+			IncomingTabBUT.FlatAppearance.BorderColor = SystemColors.ControlDarkDark;
+			IncomingTabBUT.FlatAppearance.MouseDownBackColor = SystemColors.ControlLight;
+			IncomingTabBUT.FlatAppearance.MouseOverBackColor = SystemColors.ControlLight;
 			IncomingTabBUT.FlatStyle = FlatStyle.Flat;
-			IncomingTabBUT.Location = new Point(816, 0);
+			IncomingTabBUT.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			IncomingTabBUT.Location = new Point(810, 0);
 			IncomingTabBUT.Name = "IncomingTabBUT";
-			IncomingTabBUT.Size = new Size(134, 77);
+			IncomingTabBUT.Size = new Size(145, 79);
 			IncomingTabBUT.TabIndex = 49;
+			IncomingTabBUT.Text = "Incoming";
 			IncomingTabBUT.UseVisualStyleBackColor = false;
 			IncomingTabBUT.Click += TabBut_Click;
+			// 
+			// timelab
+			// 
+			timelab.BackColor = SystemColors.ControlLight;
+			timelab.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
+			timelab.Location = new Point(1094, 7);
+			timelab.Name = "timelab";
+			timelab.Size = new Size(127, 27);
+			timelab.TabIndex = 51;
+			timelab.Text = "HH:MM:SS";
+			timelab.TextAlign = ContentAlignment.MiddleCenter;
+			// 
+			// timer2
+			// 
+			timer2.Enabled = true;
+			timer2.Interval = 500;
+			timer2.Tick += timer2_Tick;
 			// 
 			// RadSch
 			// 
@@ -782,6 +969,7 @@
 			AutoScaleMode = AutoScaleMode.Font;
 			BackgroundImage = Properties.Resources.IncomFullBG;
 			ClientSize = new Size(1233, 986);
+			Controls.Add(timelab);
 			Controls.Add(tabPANEL);
 			Controls.Add(BoxAndNumbErLAB);
 			Controls.Add(IncomingPanel);
@@ -793,7 +981,7 @@
 			Controls.Add(button4);
 			Controls.Add(button3);
 			Controls.Add(button2);
-			Controls.Add(button1);
+			Controls.Add(TXTstripBUT);
 			Controls.Add(RoleLab);
 			Controls.Add(STATUSlab);
 			Controls.Add(STATUSpicBOx);
@@ -812,6 +1000,9 @@
 			((System.ComponentModel.ISupportInitialize)STATUSpicBOx).EndInit();
 			IncomingPanel.ResumeLayout(false);
 			IncomingPanel.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)TR3PB1).EndInit();
+			((System.ComponentModel.ISupportInitialize)TR2PB1).EndInit();
+			((System.ComponentModel.ISupportInitialize)TR1PB1).EndInit();
 			tabPANEL.ResumeLayout(false);
 			ResumeLayout(false);
 			PerformLayout();
@@ -831,7 +1022,7 @@
 		private PictureBox STATUSpicBOx;
 		private Label STATUSlab;
 		private Label RoleLab;
-		private Button button1;
+		private Button TXTstripBUT;
 		private Button button2;
 		private Button button3;
 		private Button button4;
@@ -873,5 +1064,18 @@
 		private Button LogTabBUT;
 		private Button TraingMobTABBUT;
 		private Button IncomingTabBUT;
+		private Label timelab;
+		private Button button7;
+		private Button button6;
+		private PictureBox TR3PB1;
+		private Label TR3LAB2;
+		private Label TR3LAB1;
+		private PictureBox TR2PB1;
+		private Label TR2LAB2;
+		private Label TR2LAB1;
+		private PictureBox TR1PB1;
+		private Label TR1LAB2;
+		private Label TR1LAB1;
+		private System.Windows.Forms.Timer timer2;
 	}
 }

@@ -118,5 +118,17 @@ namespace dvmgsmr_console.Properties {
                 this["ButtonBeep"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string LastUSR {
+            get {
+                return ((string)(this["LastUSR"]));
+            }
+            set {
+                this["LastUSR"] = value;
+            }
+        }
     }
 }

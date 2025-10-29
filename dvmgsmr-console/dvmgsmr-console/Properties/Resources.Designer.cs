@@ -63,6 +63,16 @@ namespace dvmgsmr_console.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _523_5237943_vector_trains_icon_png_small_train_icon_transparent {
+            get {
+                object obj = ResourceManager.GetObject("523-5237943_vector-trains-icon-png-small-train-icon-transparent", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _9_96528_best_free_train_png_icon_train_icon__1_ {
             get {
                 object obj = ResourceManager.GetObject("9-96528_best-free-train-png-icon-train-icon (1)", resourceCulture);

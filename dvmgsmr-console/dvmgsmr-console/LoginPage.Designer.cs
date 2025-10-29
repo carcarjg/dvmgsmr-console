@@ -84,6 +84,8 @@
 			BUTlog = new Button();
 			UserLAB = new Label();
 			passLAB = new Label();
+			timelab = new Label();
+			timer2 = new System.Windows.Forms.Timer(components);
 			SuspendLayout();
 			// 
 			// daymonthyearLAB
@@ -919,11 +921,29 @@
 			passLAB.TabIndex = 56;
 			passLAB.TextAlign = ContentAlignment.MiddleLeft;
 			// 
+			// timelab
+			// 
+			timelab.BackColor = SystemColors.ControlLight;
+			timelab.Font = new Font("Segoe UI", 9F);
+			timelab.Location = new Point(1070, 10);
+			timelab.Name = "timelab";
+			timelab.Size = new Size(150, 41);
+			timelab.TabIndex = 57;
+			timelab.Text = "HH:MM:SS";
+			timelab.TextAlign = ContentAlignment.MiddleCenter;
+			// 
+			// timer2
+			// 
+			timer2.Enabled = true;
+			timer2.Interval = 500;
+			timer2.Tick += timer2_Tick;
+			// 
 			// LoginPage
 			// 
 			AutoScaleDimensions = new SizeF(10F, 25F);
 			AutoScaleMode = AutoScaleMode.Font;
 			BackgroundImage = Properties.Resources.Cadasdadasdaapture;
+			Controls.Add(timelab);
 			Controls.Add(passLAB);
 			Controls.Add(UserLAB);
 			Controls.Add(BUTlog);
@@ -1040,5 +1060,7 @@
 		private Button BUTlog;
 		private Label UserLAB;
 		private Label passLAB;
+		private Label timelab;
+		private System.Windows.Forms.Timer timer2;
 	}
 }

@@ -46,6 +46,12 @@ namespace dvmgsmr_console
 			string DTMY = DateTime.Now.Year.ToString();
 			daymonthyearLAB.Text = DTMD + " " + DTMM + " " + DTMY;
 			BUTlog.Enabled = false;
+			us3rB0x = Settings.Default.LastUSR;
+			UserLAB.Text = Settings.Default.LastUSR;
+			if (Settings.Default.LastUSR != "")
+			{
+				UserBoxSel = false;
+			}
 		}
 
 		private void MaintTMR_Tick(object sender, EventArgs e)
@@ -55,6 +61,7 @@ namespace dvmgsmr_console
 			string DTMM = M.ToString("MMM");
 			string DTMY = DateTime.Now.Year.ToString();
 			daymonthyearLAB.Text = DTMD + " " + DTMM + " " + DTMY;
+
 			if (us3rB0x.Length != 0 && PS.Length != 0 && BUTlog.ForeColor == SystemColors.ControlDark)
 			{
 				BUTlog.ForeColor = Color.Black;
@@ -118,6 +125,8 @@ namespace dvmgsmr_console
 					}
 				}
 				loginperm = false;
+				Settings.Default.LastUSR = us3rB0x;
+				Settings.Default.Save();
 				MainForm.CLOSE = true;
 			}
 		}
@@ -410,6 +419,13 @@ namespace dvmgsmr_console
 				else { UserBoxSel = true; }
 			}
 			ButtonBeep();
+		}
+
+		private void timer2_Tick(object sender, EventArgs e)
+		{
+			DateTime M = DateTime.Now;
+			string MSTR = M.ToString("HH:MM:ss");
+			timelab.Text = MSTR;
 		}
 	}
 }
