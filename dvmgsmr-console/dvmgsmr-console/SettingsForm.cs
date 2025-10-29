@@ -34,6 +34,20 @@ namespace dvmgsmr_console
 		public SettingsForm()
 		{
 			InitializeComponent();
+			if (Settings.Default.ButtonBeep == true)
+			{
+				buttonbeepButton.Text = "Enabled";
+			}
+			else
+			{
+				buttonbeepButton.Text = "Disabled";
+			}
+			if (Settings.Default.RingerOff == false)
+			{
+				Settings.Default.RingerOff = true;
+				ringBut.Text = "Enabled";
+			}
+			else { Settings.Default.RingerOff = false; ringBut.Text = "Disabled"; }
 		}
 
 		internal static void ButtonBeep()
@@ -81,6 +95,7 @@ namespace dvmgsmr_console
 
 		private void ringBut_Click(object sender, EventArgs e)
 		{
+			ButtonBeep();
 			if (Settings.Default.RingerOff == false)
 			{
 				Settings.Default.RingerOff = true;

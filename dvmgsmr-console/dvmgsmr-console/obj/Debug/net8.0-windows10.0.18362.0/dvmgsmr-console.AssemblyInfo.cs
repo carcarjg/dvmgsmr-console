@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("dvmgsmr-console")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+31ce5ed141a2b349458d84b29c28535efd7dd799")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1a8ce59b0b2960ad464c82485dab7cf4a32f5145")]
 [assembly: System.Reflection.AssemblyProductAttribute("dvmgsmr-console")]
 [assembly: System.Reflection.AssemblyTitleAttribute("dvmgsmr-console")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

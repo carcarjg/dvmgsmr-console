@@ -374,21 +374,24 @@ namespace dvmgsmr_console
 			{
 				acbflashcycle = true;
 				changeBUTbg("ACB", Color.Orange);
-				string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
-				string wavFileName = "Sounds\\GSM-R_Ring.wav";
-				string wavFilePath = Path.Combine(currentDirectory, wavFileName);
-				if (File.Exists(wavFilePath))
+				if (Settings.Default.RingerOff != true)
 				{
-					try
+					string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
+					string wavFileName = "Sounds\\GSM-R_Ring.wav";
+					string wavFilePath = Path.Combine(currentDirectory, wavFileName);
+					if (File.Exists(wavFilePath))
 					{
-						using (SoundPlayer player = new SoundPlayer(wavFilePath))
+						try
 						{
-							player.Play();
+							using (SoundPlayer player = new SoundPlayer(wavFilePath))
+							{
+								player.Play();
+							}
 						}
+						catch (Exception) { }
 					}
-					catch (Exception) { }
+					else { }
 				}
-				else { }
 			}
 		}
 
