@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "B:\\dvmgsmr-console\\dvmgsmr-console\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FCE21B7E-3009-41BB-A732-D34833A97C89}|dvmgsmr-console\\dvmgsmr-console.csproj|B:\\dvmgsmr-console\\dvmgsmr-console\\dvmgsmr-console\\radsch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{FCE21B7E-3009-41BB-A732-D34833A97C89}|dvmgsmr-console\\dvmgsmr-console.csproj|solutionrelative:dvmgsmr-console\\radsch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{FCE21B7E-3009-41BB-A732-D34833A97C89}|dvmgsmr-console\\dvmgsmr-console.csproj|b:\\dvmgsmr-console\\dvmgsmr-console\\dvmgsmr-console\\properties\\settings.settings||{6D2695F9-5365-4A78-89ED-F205C045BFE6}",
+      "RelativeMoniker": "D:0:0:{FCE21B7E-3009-41BB-A732-D34833A97C89}|dvmgsmr-console\\dvmgsmr-console.csproj|solutionrelative:dvmgsmr-console\\properties\\settings.settings||{6D2695F9-5365-4A78-89ED-F205C045BFE6}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FCE21B7E-3009-41BB-A732-D34833A97C89}|dvmgsmr-console\\dvmgsmr-console.csproj|b:\\dvmgsmr-console\\dvmgsmr-console\\dvmgsmr-console\\radsch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FCE21B7E-3009-41BB-A732-D34833A97C89}|dvmgsmr-console\\dvmgsmr-console.csproj|solutionrelative:dvmgsmr-console\\radsch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FCE21B7E-3009-41BB-A732-D34833A97C89}|dvmgsmr-console\\dvmgsmr-console.csproj|B:\\dvmgsmr-console\\dvmgsmr-console\\dvmgsmr-console\\radsch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{FCE21B7E-3009-41BB-A732-D34833A97C89}|dvmgsmr-console\\dvmgsmr-console.csproj|solutionrelative:dvmgsmr-console\\radsch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FCE21B7E-3009-41BB-A732-D34833A97C89}|dvmgsmr-console\\dvmgsmr-console.csproj|b:\\dvmgsmr-console\\dvmgsmr-console\\dvmgsmr-console\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -30,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 189,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,7 +42,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
+              "Title": "Settings.settings",
+              "DocumentMoniker": "B:\\dvmgsmr-console\\dvmgsmr-console\\dvmgsmr-console\\Properties\\Settings.settings",
+              "RelativeDocumentMoniker": "dvmgsmr-console\\Properties\\Settings.settings",
+              "ToolTip": "B:\\dvmgsmr-console\\dvmgsmr-console\\dvmgsmr-console\\Properties\\Settings.settings",
+              "RelativeToolTip": "dvmgsmr-console\\Properties\\Settings.settings",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002767|",
+              "WhenOpened": "2025-10-30T03:40:08.594Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "SettingsForm.cs",
               "DocumentMoniker": "B:\\dvmgsmr-console\\dvmgsmr-console\\dvmgsmr-console\\SettingsForm.cs",
               "RelativeDocumentMoniker": "dvmgsmr-console\\SettingsForm.cs",
@@ -51,7 +67,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Connections.cs",
               "DocumentMoniker": "B:\\dvmgsmr-console\\dvmgsmr-console\\dvmgsmr-console\\Connections.cs",
               "RelativeDocumentMoniker": "dvmgsmr-console\\Connections.cs",
@@ -69,14 +85,14 @@
               "RelativeDocumentMoniker": "dvmgsmr-console\\RadSch.cs",
               "ToolTip": "B:\\dvmgsmr-console\\dvmgsmr-console\\dvmgsmr-console\\RadSch.cs",
               "RelativeToolTip": "dvmgsmr-console\\RadSch.cs",
-              "ViewState": "AgIAAG4EAAAAAAAAAAAjwIoEAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAA0EAAAAAAAAAAAwwFQAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-26T05:29:00.017Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "RadSch.cs [Design]",
               "DocumentMoniker": "B:\\dvmgsmr-console\\dvmgsmr-console\\dvmgsmr-console\\RadSch.cs",
               "RelativeDocumentMoniker": "dvmgsmr-console\\RadSch.cs",
@@ -88,7 +104,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "MainForm.cs",
               "DocumentMoniker": "B:\\dvmgsmr-console\\dvmgsmr-console\\dvmgsmr-console\\MainForm.cs",
               "RelativeDocumentMoniker": "dvmgsmr-console\\MainForm.cs",

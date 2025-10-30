@@ -86,8 +86,7 @@
 			// 
 			// SettingsForm
 			// 
-			AutoScaleDimensions = new SizeF(10F, 25F);
-			AutoScaleMode = AutoScaleMode.Font;
+			AutoScaleMode = AutoScaleMode.None;
 			BackColor = SystemColors.ControlLight;
 			ClientSize = new Size(889, 704);
 			Controls.Add(label2);

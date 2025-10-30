@@ -940,8 +940,7 @@
 			// 
 			// LoginPage
 			// 
-			AutoScaleDimensions = new SizeF(10F, 25F);
-			AutoScaleMode = AutoScaleMode.Font;
+			AutoScaleMode = AutoScaleMode.None;
 			BackgroundImage = Properties.Resources.Cadasdadasdaapture;
 			Controls.Add(timelab);
 			Controls.Add(passLAB);

@@ -230,8 +230,7 @@
 			// 
 			// AdminPage
 			// 
-			AutoScaleDimensions = new SizeF(10F, 25F);
-			AutoScaleMode = AutoScaleMode.Font;
+			AutoScaleMode = AutoScaleMode.None;
 			ClientSize = new Size(760, 603);
 			Controls.Add(label5);
 			Controls.Add(label4);

@@ -19,6 +19,7 @@
 ///ACB needs to also be able to switch between calls and put a call on "hold"
 using dvmgsmr_console.Properties;
 using Microsoft.VisualBasic;
+using System.Configuration;
 using System.Media;
 using System.Xml.Linq;
 using Windows.Perception.People;
@@ -44,6 +45,26 @@ namespace dvmgsmr_console
 
 		internal static Dictionary<string, int> TG_to_ConID = new Dictionary<string, int>();
 
+		internal static Dictionary<string, int> Pend_RX_Text_TextIDs = new Dictionary<string, int>();
+
+		internal static Dictionary<int, string> Pend_RX_Text = new Dictionary<int, string>();
+
+		internal static Dictionary<int, string> Pend_RX_Text_Subj = new Dictionary<int, string>();
+
+		internal static Dictionary<int, string> Pend_RX_Text_Src = new Dictionary<int, string>();
+
+		internal static Dictionary<string, int> Pend_RX_Text_ToSlot = new Dictionary<string, int>();
+
+		internal static Dictionary<string, int> RX_Text_TextIDs = new Dictionary<string, int>();
+
+		internal static Dictionary<int, string> RX_Text = new Dictionary<int, string>();
+
+		internal static Dictionary<int, string> RX_Text_Subj = new Dictionary<int, string>();
+
+		internal static Dictionary<int, string> RX_Text_Src = new Dictionary<int, string>();
+
+		internal static Dictionary<string, int> RX_Text_ToSlot = new Dictionary<string, int>();
+
 		internal static string[] acallsHC = new string[4];
 
 		internal static string calltype;
@@ -57,6 +78,12 @@ namespace dvmgsmr_console
 		internal static bool callspending;
 
 		internal static bool callwaitingpickup;
+
+		internal static bool textpending;
+
+		internal static bool textwaitingack;
+
+		internal static int nextTMSID;
 
 		/// <summary>
 		/// Tab 5 = Incoming (Default)
@@ -1055,7 +1082,8 @@ namespace dvmgsmr_console
 				cts.Cancel();
 			}
 			catch (Exception) { }
-
+			Settings.Default.NextTXMID = nextTMSID + 1;
+			Settings.Default.Save();
 			Application.Exit();
 		}
 
@@ -1154,7 +1182,26 @@ namespace dvmgsmr_console
 		}
 
 		internal void NewTxTMsg(int pri, string from, string subject, string Message)
-		{ }
+		{
+			bool foundslot = false;
+			if (TR1LAB1.Text != "" || TR1LAB1.Text != "label1")
+			{
+				foundslot = true;
+			}
+			else if (TR2LAB1.Text != "" || TR2LAB1.Text != "label1" && foundslot != true)
+			{
+				foundslot = true;
+			}
+			else if (TR3LAB1.Text != "" || TR3LAB1.Text != "label1" && foundslot != true)
+			{
+				foundslot = true;
+			}
+
+			//Find avail UI slot for Text MSG
+			//Enter Text MSG info into the Dicts
+			//Display info on UI
+			//Alert
+		}
 
 		private void timer2_Tick(object sender, EventArgs e)
 		{

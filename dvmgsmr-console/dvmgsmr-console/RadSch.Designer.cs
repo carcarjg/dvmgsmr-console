@@ -965,8 +965,7 @@
 			// 
 			// RadSch
 			// 
-			AutoScaleDimensions = new SizeF(10F, 25F);
-			AutoScaleMode = AutoScaleMode.Font;
+			AutoScaleMode = AutoScaleMode.None;
 			BackgroundImage = Properties.Resources.IncomFullBG;
 			ClientSize = new Size(1233, 986);
 			Controls.Add(timelab);

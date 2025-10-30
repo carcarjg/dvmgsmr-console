@@ -130,5 +130,17 @@ namespace dvmgsmr_console.Properties {
                 this["LastUSR"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int NextTXMID {
+            get {
+                return ((int)(this["NextTXMID"]));
+            }
+            set {
+                this["NextTXMID"] = value;
+            }
+        }
     }
 }
