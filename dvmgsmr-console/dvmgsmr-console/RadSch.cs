@@ -19,8 +19,11 @@
 ///ACB needs to also be able to switch between calls and put a call on "hold"
 using dvmgsmr_console.Properties;
 using Microsoft.VisualBasic;
+using Org.BouncyCastle.Pqc.Crypto.Frodo;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Media;
+using System.Runtime.CompilerServices;
 using System.Xml.Linq;
 using Windows.Perception.People;
 using Windows.UI.Composition;
@@ -53,6 +56,10 @@ namespace dvmgsmr_console
 
 		internal static Dictionary<int, string> Pend_RX_Text_Src = new Dictionary<int, string>();
 
+		/// <summary>
+		/// Key = From Addr
+		/// Value = TxtMsgID
+		/// </summary>
 		internal static Dictionary<string, int> Pend_RX_Text_ToSlot = new Dictionary<string, int>();
 
 		internal static Dictionary<string, int> RX_Text_TextIDs = new Dictionary<string, int>();
@@ -63,6 +70,10 @@ namespace dvmgsmr_console
 
 		internal static Dictionary<int, string> RX_Text_Src = new Dictionary<int, string>();
 
+		/// <summary>
+		/// Key = From Addr
+		/// Value = TxtMsgID
+		/// </summary>
 		internal static Dictionary<string, int> RX_Text_ToSlot = new Dictionary<string, int>();
 
 		internal static string[] acallsHC = new string[4];
@@ -85,6 +96,10 @@ namespace dvmgsmr_console
 
 		internal static int nextTMSID;
 
+		internal static int selectedPendTXTBOX = 0;
+
+		internal static int selectedTXTBOX = 0;
+
 		/// <summary>
 		/// Tab 5 = Incoming (Default)
 		/// Tab 4 = Trains Mobiles
@@ -97,7 +112,7 @@ namespace dvmgsmr_console
 		public RadSch()
 		{
 			InitializeComponent();
-
+			nextTMSID = Settings.Default.NextTXMID;
 			acbLAB1.Text = "Ready";
 			acbLAB1.TextAlign = ContentAlignment.MiddleRight;
 			string DTMD = DateTime.Now.Day.ToString();
@@ -158,6 +173,7 @@ namespace dvmgsmr_console
 			{
 				RC2Con();
 			}
+			NewTxTMsg(0, UserInforStore.SigBox, "new role", UserInforStore.SigBox + "role added to your FT");
 #if DEBUG
 
 			//ringACB(500150, "CM_RAIL");
@@ -1187,17 +1203,87 @@ namespace dvmgsmr_console
 			if (TR1LAB1.Text != "" || TR1LAB1.Text != "label1")
 			{
 				foundslot = true;
+				Pend_RX_Text.TryAdd(nextTMSID, Message);
+				Pend_RX_Text_Src.TryAdd(nextTMSID, from);
+				Pend_RX_Text_Subj.TryAdd(nextTMSID, subject);
+				Pend_RX_Text_ToSlot.TryAdd(from, 1);
+				TR1LAB1.Text = from;
+				TR1LAB2.Text = subject;
+				TR1LAB1.Visible = true;
+				TR1LAB2.Visible = true;
+				TR1LAB1.ForeColor = Color.White;
+				TR1LAB2.ForeColor = Color.White;
+				TR1LAB2.Visible = true;
+				TR1LAB1.BackColor = Color.Blue;
+				TR1LAB2.BackColor = Color.Blue;
+				T1BUT.BackColor = Color.Blue;
+				selectedPendTXTBOX = 1;
+				nextTMSID++;
 			}
 			else if (TR2LAB1.Text != "" || TR2LAB1.Text != "label1" && foundslot != true)
 			{
 				foundslot = true;
+				Pend_RX_Text.TryAdd(nextTMSID, Message);
+				Pend_RX_Text_Src.TryAdd(nextTMSID, from);
+				Pend_RX_Text_Subj.TryAdd(nextTMSID, subject);
+				Pend_RX_Text_ToSlot.TryAdd(from, 2);
+				TR2LAB1.Text = from;
+				TR2LAB2.Text = subject;
+				TR2LAB1.Visible = true;
+				TR2LAB2.Visible = true;
+				TR2LAB1.ForeColor = Color.White;
+				TR2LAB2.ForeColor = Color.White;
+				nextTMSID++;
+				TR2LAB1.BackColor = Color.Blue;
+				TR2LAB2.BackColor = Color.Blue;
+				T2.BackColor = Color.Blue;
+				selectedPendTXTBOX = 2;
 			}
 			else if (TR3LAB1.Text != "" || TR3LAB1.Text != "label1" && foundslot != true)
 			{
 				foundslot = true;
+				Pend_RX_Text.TryAdd(nextTMSID, Message);
+				Pend_RX_Text_Src.TryAdd(nextTMSID, from);
+				Pend_RX_Text_Subj.TryAdd(nextTMSID, subject);
+				Pend_RX_Text_ToSlot.TryAdd(from, 3);
+				TR3LAB1.Text = from;
+				TR3LAB2.Text = subject;
+				TR3LAB1.Visible = true;
+				TR3LAB2.Visible = true;
+				TR3LAB1.ForeColor = Color.White;
+				TR3LAB2.ForeColor = Color.White;
+				nextTMSID++;
+				TR3LAB1.BackColor = Color.Blue;
+				TR3LAB2.BackColor = Color.Blue;
+				T3BUT.BackColor = Color.Blue;
+				selectedPendTXTBOX = 3;
 			}
 
-			//Find avail UI slot for Text MSG
+			if (Settings.Default.RingerOff != true)
+			{
+				string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
+				string wavFileName = "Sounds\\message_standard.wav";
+				string wavFilePath = Path.Combine(currentDirectory, wavFileName);
+				if (File.Exists(wavFilePath))
+				{
+					try
+					{
+						using (SoundPlayer player = new SoundPlayer(wavFilePath))
+						{
+							player.Play();
+						}
+					}
+					catch (Exception) { }
+				}
+				else { }
+			}
+
+			TXTAlrt.Enabled = true;
+			TXTAlrt.Start();
+			TXTvis.Enabled = true;
+			TXTvis.Start();
+
+			//Find avail UI slot for Text MSG---
 			//Enter Text MSG info into the Dicts
 			//Display info on UI
 			//Alert
@@ -1212,6 +1298,90 @@ namespace dvmgsmr_console
 
 		private void TXTstripBUT_Click(object sender, EventArgs e)
 		{
+			ButtonBeep();
+			if (selectedPendTXTBOX != 0)
+			{
+				//Move it to The Non Pending Inbox
+				//TODO:
+				//Find Open Slot
+				//Transfer data from Pending DB to non Pending DB
+				switch (selectedPendTXTBOX)
+				{
+					case 1:
+						int ID;
+						Pend_RX_Text_ToSlot.TryGetValue(TR1LAB1.Text, out ID);
+						string from;
+						string subject;
+						string body;
+						Pend_RX_Text_Src.TryGetValue(ID, out from);
+						Pend_RX_Text_Subj.TryGetValue(ID, out subject);
+						Pend_RX_Text.TryGetValue(ID, out body);
+
+						//Bad IDea, Redo THis
+						RX_Text.TryAdd(nextTMSID, body);
+						RX_Text_Src.TryAdd(nextTMSID, from);
+						RX_Text_Subj.TryAdd(nextTMSID, subject);
+						RX_Text_ToSlot.TryAdd(from, 1);
+						TXTRemoveBUT.Visible = true;
+						break;
+
+					case 2:
+						TXTRemoveBUT.Visible = true;
+						break;
+
+					case 3:
+						TXTRemoveBUT.Visible = true;
+						break;
+				}
+			}
+		}
+
+		private void TXTAlrt_Tick(object sender, EventArgs e)
+		{
+			if (Settings.Default.RingerOff != true)
+			{
+				string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
+				string wavFileName = "Sounds\\message_standard.wav";
+				string wavFilePath = Path.Combine(currentDirectory, wavFileName);
+				if (File.Exists(wavFilePath))
+				{
+					try
+					{
+						using (SoundPlayer player = new SoundPlayer(wavFilePath))
+						{
+							player.Play();
+						}
+					}
+					catch (Exception) { }
+				}
+				else { }
+			}
+		}
+
+		internal void RemoveTXT(int ID, bool pending)
+		{ }
+
+		private void TXTvis_Tick(object sender, EventArgs e)
+		{
+			if (TXTstripBUT.BackColor == Color.Orange)
+			{
+				TXTstripBUT.BackColor = SystemColors.ControlLight;
+			}
+			else { TXTstripBUT.BackColor = Color.Orange; }
+		}
+
+		private void PendTXTButClick(object sender, EventArgs e)
+		{
+			ButtonBeep();
+		}
+
+		private void TXTButClick(object sender, EventArgs e)
+		{ }
+
+		private void TXTRemoveBUT_Click(object sender, EventArgs e)
+		{
+			//Remove the TXT outright
+			RemoveTXT(0, false);
 		}
 	}
 }

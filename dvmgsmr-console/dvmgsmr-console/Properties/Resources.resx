@@ -121,11 +121,26 @@
   <data name="Captuasdadadre1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Captuasdadadre1.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="CheckBox" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CheckBox.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="image_processing20210616-28548-1hq0son" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\image_processing20210616-28548-1hq0son.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="523-5237943_vector-trains-icon-png-small-train-icon-transparent" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\523-5237943_vector-trains-icon-png-small-train-icon-transparent.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IncomingSelTAB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IncomingSelTAB.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GroupSelTAB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GroupSelTAB.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Cadasdadasdaapture" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cadasdadasdaapture.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="9-96528_best-free-train-png-icon-train-icon (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\9-96528_best-free-train-png-icon-train-icon (1)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CheckBox" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CheckBox.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="IncomBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IncomBackground.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -136,11 +151,8 @@
   <data name="IncomFullBG" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IncomFullBG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="GroupSelTAB" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GroupSelTAB.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="IncomingSelTAB" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IncomingSelTAB.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="image_processing20210616-28548-1hq0son1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\image_processing20210616-28548-1hq0son1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LogSelTAB" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LogSelTAB.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,10 +160,7 @@
   <data name="SPDDialSelTAB" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SPDDialSelTAB.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Cadasdadasdaapture" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Cadasdadasdaapture.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="523-5237943_vector-trains-icon-png-small-train-icon-transparent" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\523-5237943_vector-trains-icon-png-small-train-icon-transparent.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="image_processing20210616-28548-1hq0son2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\image_processing20210616-28548-1hq0son2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

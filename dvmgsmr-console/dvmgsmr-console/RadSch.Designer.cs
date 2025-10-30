@@ -51,6 +51,10 @@
 			button8 = new Button();
 			button9 = new Button();
 			IncomingPanel = new Panel();
+			button11 = new Button();
+			button10 = new Button();
+			TXTRemoveBUT = new Button();
+			TxtMsgFullDisplLAB = new Label();
 			TR3PB1 = new PictureBox();
 			TR3LAB2 = new Label();
 			TR3LAB1 = new Label();
@@ -96,6 +100,8 @@
 			IncomingTabBUT = new Button();
 			timelab = new Label();
 			timer2 = new System.Windows.Forms.Timer(components);
+			TXTAlrt = new System.Windows.Forms.Timer(components);
+			TXTvis = new System.Windows.Forms.Timer(components);
 			((System.ComponentModel.ISupportInitialize)ACBicoPB).BeginInit();
 			((System.ComponentModel.ISupportInitialize)STATUSpicBOx).BeginInit();
 			IncomingPanel.SuspendLayout();
@@ -245,10 +251,11 @@
 			// 
 			// TXTstripBUT
 			// 
-			TXTstripBUT.BackColor = Color.Transparent;
-			TXTstripBUT.Enabled = false;
-			TXTstripBUT.FlatAppearance.MouseDownBackColor = Color.Transparent;
-			TXTstripBUT.FlatAppearance.MouseOverBackColor = Color.Transparent;
+			TXTstripBUT.BackColor = SystemColors.ControlLight;
+			TXTstripBUT.BackgroundImage = Properties.Resources.image_processing20210616_28548_1hq0son2;
+			TXTstripBUT.BackgroundImageLayout = ImageLayout.Zoom;
+			TXTstripBUT.FlatAppearance.MouseDownBackColor = SystemColors.ControlLight;
+			TXTstripBUT.FlatAppearance.MouseOverBackColor = SystemColors.ControlLight;
 			TXTstripBUT.FlatStyle = FlatStyle.Flat;
 			TXTstripBUT.Location = new Point(877, 883);
 			TXTstripBUT.Name = "TXTstripBUT";
@@ -373,6 +380,10 @@
 			IncomingPanel.BackColor = Color.Transparent;
 			IncomingPanel.BackgroundImage = Properties.Resources.IncomBackground;
 			IncomingPanel.BackgroundImageLayout = ImageLayout.Zoom;
+			IncomingPanel.Controls.Add(button11);
+			IncomingPanel.Controls.Add(button10);
+			IncomingPanel.Controls.Add(TXTRemoveBUT);
+			IncomingPanel.Controls.Add(TxtMsgFullDisplLAB);
 			IncomingPanel.Controls.Add(TR3PB1);
 			IncomingPanel.Controls.Add(TR3LAB2);
 			IncomingPanel.Controls.Add(TR3LAB1);
@@ -412,6 +423,56 @@
 			IncomingPanel.Size = new Size(1207, 716);
 			IncomingPanel.TabIndex = 43;
 			// 
+			// button11
+			// 
+			button11.FlatAppearance.MouseDownBackColor = SystemColors.ControlLight;
+			button11.FlatAppearance.MouseOverBackColor = SystemColors.ControlLight;
+			button11.FlatStyle = FlatStyle.Flat;
+			button11.Location = new Point(1032, 593);
+			button11.Name = "button11";
+			button11.Size = new Size(102, 83);
+			button11.TabIndex = 65;
+			button11.Text = "button11";
+			button11.UseVisualStyleBackColor = true;
+			button11.Visible = false;
+			// 
+			// button10
+			// 
+			button10.FlatAppearance.MouseDownBackColor = SystemColors.ControlLight;
+			button10.FlatAppearance.MouseOverBackColor = SystemColors.ControlLight;
+			button10.FlatStyle = FlatStyle.Flat;
+			button10.Location = new Point(710, 593);
+			button10.Name = "button10";
+			button10.Size = new Size(102, 83);
+			button10.TabIndex = 64;
+			button10.Text = "button10";
+			button10.UseVisualStyleBackColor = true;
+			button10.Visible = false;
+			// 
+			// TXTRemoveBUT
+			// 
+			TXTRemoveBUT.FlatAppearance.MouseDownBackColor = SystemColors.ControlLight;
+			TXTRemoveBUT.FlatAppearance.MouseOverBackColor = SystemColors.ControlLight;
+			TXTRemoveBUT.FlatStyle = FlatStyle.Flat;
+			TXTRemoveBUT.Font = new Font("Segoe UI", 10F);
+			TXTRemoveBUT.Location = new Point(871, 593);
+			TXTRemoveBUT.Name = "TXTRemoveBUT";
+			TXTRemoveBUT.Size = new Size(102, 83);
+			TXTRemoveBUT.TabIndex = 63;
+			TXTRemoveBUT.Text = "Remove";
+			TXTRemoveBUT.UseVisualStyleBackColor = true;
+			TXTRemoveBUT.Visible = false;
+			TXTRemoveBUT.Click += TXTRemoveBUT_Click;
+			// 
+			// TxtMsgFullDisplLAB
+			// 
+			TxtMsgFullDisplLAB.AutoEllipsis = true;
+			TxtMsgFullDisplLAB.Location = new Point(658, 467);
+			TxtMsgFullDisplLAB.Name = "TxtMsgFullDisplLAB";
+			TxtMsgFullDisplLAB.Size = new Size(526, 90);
+			TxtMsgFullDisplLAB.TabIndex = 62;
+			TxtMsgFullDisplLAB.Text = "label1";
+			// 
 			// TR3PB1
 			// 
 			TR3PB1.Location = new Point(85, 407);
@@ -419,6 +480,7 @@
 			TR3PB1.Size = new Size(45, 40);
 			TR3PB1.TabIndex = 61;
 			TR3PB1.TabStop = false;
+			TR3PB1.Click += PendTXTButClick;
 			// 
 			// TR3LAB2
 			// 
@@ -432,6 +494,7 @@
 			TR3LAB2.Text = "label2";
 			TR3LAB2.TextAlign = ContentAlignment.MiddleLeft;
 			TR3LAB2.Visible = false;
+			TR3LAB2.Click += PendTXTButClick;
 			// 
 			// TR3LAB1
 			// 
@@ -445,6 +508,7 @@
 			TR3LAB1.Text = "label1";
 			TR3LAB1.TextAlign = ContentAlignment.MiddleLeft;
 			TR3LAB1.Visible = false;
+			TR3LAB1.Click += PendTXTButClick;
 			// 
 			// TR2PB1
 			// 
@@ -453,6 +517,7 @@
 			TR2PB1.Size = new Size(45, 40);
 			TR2PB1.TabIndex = 58;
 			TR2PB1.TabStop = false;
+			TR2PB1.Click += PendTXTButClick;
 			// 
 			// TR2LAB2
 			// 
@@ -466,6 +531,7 @@
 			TR2LAB2.Text = "label2";
 			TR2LAB2.TextAlign = ContentAlignment.MiddleLeft;
 			TR2LAB2.Visible = false;
+			TR2LAB2.Click += PendTXTButClick;
 			// 
 			// TR2LAB1
 			// 
@@ -479,6 +545,7 @@
 			TR2LAB1.Text = "label1";
 			TR2LAB1.TextAlign = ContentAlignment.MiddleLeft;
 			TR2LAB1.Visible = false;
+			TR2LAB1.Click += PendTXTButClick;
 			// 
 			// TR1PB1
 			// 
@@ -487,6 +554,7 @@
 			TR1PB1.Size = new Size(45, 40);
 			TR1PB1.TabIndex = 55;
 			TR1PB1.TabStop = false;
+			TR1PB1.Click += PendTXTButClick;
 			// 
 			// TR1LAB2
 			// 
@@ -500,6 +568,7 @@
 			TR1LAB2.Text = "label2";
 			TR1LAB2.TextAlign = ContentAlignment.MiddleLeft;
 			TR1LAB2.Visible = false;
+			TR1LAB2.Click += PendTXTButClick;
 			// 
 			// TR1LAB1
 			// 
@@ -513,6 +582,7 @@
 			TR1LAB1.Text = "label1";
 			TR1LAB1.TextAlign = ContentAlignment.MiddleLeft;
 			TR1LAB1.Visible = false;
+			TR1LAB1.Click += PendTXTButClick;
 			// 
 			// C5lab2
 			// 
@@ -676,6 +746,7 @@
 			AT4BUT.Size = new Size(526, 44);
 			AT4BUT.TabIndex = 40;
 			AT4BUT.UseVisualStyleBackColor = false;
+			AT4BUT.Click += TXTButClick;
 			// 
 			// AT5BUT
 			// 
@@ -687,6 +758,7 @@
 			AT5BUT.Size = new Size(526, 44);
 			AT5BUT.TabIndex = 39;
 			AT5BUT.UseVisualStyleBackColor = false;
+			AT5BUT.Click += TXTButClick;
 			// 
 			// AT3BUT
 			// 
@@ -698,6 +770,7 @@
 			AT3BUT.Size = new Size(526, 44);
 			AT3BUT.TabIndex = 38;
 			AT3BUT.UseVisualStyleBackColor = false;
+			AT3BUT.Click += TXTButClick;
 			// 
 			// AT2BUT
 			// 
@@ -709,6 +782,7 @@
 			AT2BUT.Size = new Size(526, 44);
 			AT2BUT.TabIndex = 37;
 			AT2BUT.UseVisualStyleBackColor = false;
+			AT2BUT.Click += TXTButClick;
 			// 
 			// AT1BUT
 			// 
@@ -720,6 +794,7 @@
 			AT1BUT.Size = new Size(526, 44);
 			AT1BUT.TabIndex = 36;
 			AT1BUT.UseVisualStyleBackColor = false;
+			AT1BUT.Click += TXTButClick;
 			// 
 			// T3BUT
 			// 
@@ -731,6 +806,7 @@
 			T3BUT.Size = new Size(526, 44);
 			T3BUT.TabIndex = 35;
 			T3BUT.UseVisualStyleBackColor = false;
+			T3BUT.Click += PendTXTButClick;
 			// 
 			// T2
 			// 
@@ -742,6 +818,7 @@
 			T2.Size = new Size(526, 44);
 			T2.TabIndex = 34;
 			T2.UseVisualStyleBackColor = false;
+			T2.Click += PendTXTButClick;
 			// 
 			// T1BUT
 			// 
@@ -753,6 +830,7 @@
 			T1BUT.Size = new Size(526, 44);
 			T1BUT.TabIndex = 33;
 			T1BUT.UseVisualStyleBackColor = false;
+			T1BUT.Click += PendTXTButClick;
 			// 
 			// C5BUT
 			// 
@@ -963,6 +1041,16 @@
 			timer2.Interval = 500;
 			timer2.Tick += timer2_Tick;
 			// 
+			// TXTAlrt
+			// 
+			TXTAlrt.Interval = 5000;
+			TXTAlrt.Tick += TXTAlrt_Tick;
+			// 
+			// TXTvis
+			// 
+			TXTvis.Interval = 1000;
+			TXTvis.Tick += TXTvis_Tick;
+			// 
 			// RadSch
 			// 
 			AutoScaleMode = AutoScaleMode.None;
@@ -1076,5 +1164,11 @@
 		private Label TR1LAB2;
 		private Label TR1LAB1;
 		private System.Windows.Forms.Timer timer2;
+		private System.Windows.Forms.Timer TXTAlrt;
+		private System.Windows.Forms.Timer TXTvis;
+		private Button button11;
+		private Button button10;
+		private Button TXTRemoveBUT;
+		private Label TxtMsgFullDisplLAB;
 	}
 }

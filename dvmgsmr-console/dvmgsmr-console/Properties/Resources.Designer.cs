@@ -123,6 +123,36 @@ namespace dvmgsmr_console.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap image_processing20210616_28548_1hq0son {
+            get {
+                object obj = ResourceManager.GetObject("image_processing20210616-28548-1hq0son", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap image_processing20210616_28548_1hq0son1 {
+            get {
+                object obj = ResourceManager.GetObject("image_processing20210616-28548-1hq0son1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap image_processing20210616_28548_1hq0son2 {
+            get {
+                object obj = ResourceManager.GetObject("image_processing20210616-28548-1hq0son2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap IncomBackground {
             get {
                 object obj = ResourceManager.GetObject("IncomBackground", resourceCulture);
