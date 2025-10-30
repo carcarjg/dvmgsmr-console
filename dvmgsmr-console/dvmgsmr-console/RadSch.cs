@@ -1211,11 +1211,10 @@ namespace dvmgsmr_console
 				TR1LAB2.Text = subject;
 				TR1LAB1.Visible = true;
 				TR1LAB2.Visible = true;
-				TR1LAB1.ForeColor = Color.White;
-				TR1LAB2.ForeColor = Color.White;
-				TR1LAB2.Visible = true;
 				TR1LAB1.BackColor = Color.Blue;
 				TR1LAB2.BackColor = Color.Blue;
+				TR1LAB1.ForeColor = Color.White;
+				TR1LAB2.ForeColor = Color.White;
 				T1BUT.BackColor = Color.Blue;
 				selectedPendTXTBOX = 1;
 				nextTMSID++;
@@ -1231,11 +1230,11 @@ namespace dvmgsmr_console
 				TR2LAB2.Text = subject;
 				TR2LAB1.Visible = true;
 				TR2LAB2.Visible = true;
-				TR2LAB1.ForeColor = Color.White;
-				TR2LAB2.ForeColor = Color.White;
 				nextTMSID++;
 				TR2LAB1.BackColor = Color.Blue;
 				TR2LAB2.BackColor = Color.Blue;
+				TR2LAB1.ForeColor = Color.White;
+				TR2LAB2.ForeColor = Color.White;
 				T2.BackColor = Color.Blue;
 				selectedPendTXTBOX = 2;
 			}
@@ -1250,11 +1249,11 @@ namespace dvmgsmr_console
 				TR3LAB2.Text = subject;
 				TR3LAB1.Visible = true;
 				TR3LAB2.Visible = true;
-				TR3LAB1.ForeColor = Color.White;
-				TR3LAB2.ForeColor = Color.White;
 				nextTMSID++;
 				TR3LAB1.BackColor = Color.Blue;
 				TR3LAB2.BackColor = Color.Blue;
+				TR3LAB1.ForeColor = Color.White;
+				TR3LAB2.ForeColor = Color.White;
 				T3BUT.BackColor = Color.Blue;
 				selectedPendTXTBOX = 3;
 			}
