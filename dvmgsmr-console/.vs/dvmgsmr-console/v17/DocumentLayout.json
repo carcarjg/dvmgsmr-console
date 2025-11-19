@@ -46,7 +46,8 @@
               "RelativeToolTip": "dvmgsmr-console\\SettingsForm.cs",
               "ViewState": "AgIAAD8AAAAAAAAAAAAYwGEAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-28T15:24:57.589Z"
+              "WhenOpened": "2025-10-28T15:24:57.589Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -58,7 +59,8 @@
               "RelativeToolTip": "dvmgsmr-console\\Connections.cs",
               "ViewState": "AgIAAJgAAAAAAAAAAAAhwPQAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-26T02:24:09.973Z"
+              "WhenOpened": "2025-10-26T02:24:09.973Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -68,7 +70,7 @@
               "RelativeDocumentMoniker": "dvmgsmr-console\\RadSch.cs",
               "ToolTip": "B:\\dvmgsmr-console\\dvmgsmr-console\\dvmgsmr-console\\RadSch.cs",
               "RelativeToolTip": "dvmgsmr-console\\RadSch.cs",
-              "ViewState": "AgIAAKoEAAAAAAAAAAAkwM8EAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAKEAAAAAAAAAAAAhwL4AAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-26T05:29:00.017Z",
               "EditorCaption": ""
@@ -93,9 +95,10 @@
               "RelativeDocumentMoniker": "dvmgsmr-console\\MainForm.cs",
               "ToolTip": "B:\\dvmgsmr-console\\dvmgsmr-console\\dvmgsmr-console\\MainForm.cs",
               "RelativeToolTip": "dvmgsmr-console\\MainForm.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAAADoAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAIBJwDoAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-26T01:40:30.327Z"
+              "WhenOpened": "2025-10-26T01:40:30.327Z",
+              "EditorCaption": ""
             }
           ]
         }

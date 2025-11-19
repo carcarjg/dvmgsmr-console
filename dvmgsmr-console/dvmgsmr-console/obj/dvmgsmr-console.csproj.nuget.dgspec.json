@@ -59,6 +59,14 @@
               "target": "Package",
               "version": "[2.2.1, )"
             },
+            "NHotkey": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "NHotkey.WindowsForms": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.4, )"

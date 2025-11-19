@@ -53,3 +53,5 @@ B:\dvmgsmr-console\dvmgsmr-console\dvmgsmr-console\bin\Debug\net8.0-windows10.0.
 B:\dvmgsmr-console\dvmgsmr-console\dvmgsmr-console\bin\Debug\net8.0-windows10.0.18362.0\Sounds\screen_beep.wav
 B:\dvmgsmr-console\dvmgsmr-console\dvmgsmr-console\bin\Debug\net8.0-windows10.0.18362.0\dvmgsmr-console.dll.config
 B:\dvmgsmr-console\dvmgsmr-console\dvmgsmr-console\obj\Debug\net8.0-windows10.0.18362.0\dvmgsmr_console.SettingsForm.resources
+B:\dvmgsmr-console\dvmgsmr-console\dvmgsmr-console\bin\Debug\net8.0-windows10.0.18362.0\NHotkey.dll
+B:\dvmgsmr-console\dvmgsmr-console\dvmgsmr-console\bin\Debug\net8.0-windows10.0.18362.0\NHotkey.WindowsForms.dll

@@ -19,11 +19,15 @@
 ///ACB needs to also be able to switch between calls and put a call on "hold"
 using dvmgsmr_console.Properties;
 using Microsoft.VisualBasic;
+using Newtonsoft.Json.Linq;
+using NHotkey;
+using NHotkey.WindowsForms;
 using Org.BouncyCastle.Pqc.Crypto.Frodo;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Media;
 using System.Runtime.CompilerServices;
+using System.Windows.Forms;
 using System.Xml.Linq;
 using Windows.Perception.People;
 using Windows.UI.Composition;
@@ -174,10 +178,99 @@ namespace dvmgsmr_console
 				RC2Con();
 			}
 			NewTxTMsg(0, UserInforStore.SigBox, "new role", UserInforStore.SigBox + "role added to your FT");
+			HotkeyManager.Current.AddOrReplace("PTT", Keys.F7, OnF7PTT);
+
 #if DEBUG
 
 			//ringACB(500150, "CM_RAIL");
 #endif
+		}
+
+		private void OnF7PTT(object sender, HotkeyEventArgs e)
+		{
+			switch (CheckForCallTG(ACBtgLAB.Text))
+			{
+				case 0:
+					if (Connections.TXC1 == true)
+					{
+						Connections.TXSR1 = true;
+						Connections.TXC1 = false;
+					}
+					else
+					{
+						Connections.TXR1 = true;
+						Connections.TXC1 = true;
+					}
+
+					break;
+
+				case 1:
+					if (Connections.TXC2 == true)
+					{
+						Connections.TXSR2 = true;
+						Connections.TXC2 = false;
+					}
+					else
+					{
+						Connections.TXR2 = true;
+						Connections.TXC2 = true;
+					}
+					break;
+
+				case 2:
+					if (Connections.TXC3 == true)
+					{
+						Connections.TXSR3 = true;
+						Connections.TXC3 = false;
+					}
+					else
+					{
+						Connections.TXR3 = true;
+						Connections.TXC3 = true;
+					}
+					break;
+
+				case 3:
+					if (Connections.TXC4 == true)
+					{
+						Connections.TXSR4 = true;
+						Connections.TXC4 = false;
+					}
+					else
+					{
+						Connections.TXR4 = true;
+						Connections.TXC4 = true;
+					}
+					break;
+
+				case 4:
+					if (Connections.TXC5 == true)
+					{
+						Connections.TXSR5 = true;
+						Connections.TXC5 = false;
+					}
+					else
+					{
+						Connections.TXR5 = true;
+						Connections.TXC5 = true;
+					}
+					break;
+
+				case 5:
+					if (Connections.TXC6 == true)
+					{
+						Connections.TXSR6 = true;
+						Connections.TXC6 = false;
+					}
+					else
+					{
+						Connections.TXR6 = true;
+						Connections.TXC6 = true;
+					}
+					break;
+			}
+
+			e.Handled = true;
 		}
 
 		internal void ringACB(int HC, string TG)
